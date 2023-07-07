@@ -23,7 +23,6 @@ const HeroSection = () => {
           >
             <Grid item>
               <Typography
-                // variant="h2"
                 color="#ffffff"
                 fontFamily="Montserrat"
                 fontSize={78}
@@ -36,7 +35,6 @@ const HeroSection = () => {
             </Grid>
             <Grid item width="80%" mt={2}>
               <Typography
-                // variant="h5"
                 color="#ffffff"
                 fontFamily="Montserrat"
                 fontSize={22}

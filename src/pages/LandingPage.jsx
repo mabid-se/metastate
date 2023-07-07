@@ -7,7 +7,8 @@ import Benifits from "../components/benefits/Benifits";
 import Footer from "../components/footer/Footer";
 import ContactUs from "../components/contact-us/ContactUs";
 import GetAccess from "../components/get-access/GetAccess";
-// import Appbar from "../components/Appbar";
+import Roadmap from "../components/roadmap/Roadmap";
+import BecomeInvestor from "../components/become-investor/BecomeInvestor";
 
 const LandingPage = () => {
   return (
@@ -17,7 +18,9 @@ const LandingPage = () => {
         <HeroSection />
         <BuyRealEstate />
         <Benifits />
+        <Roadmap />
         <GetAccess />
+        <BecomeInvestor />
         <ContactUs />
         <Footer />
       </Box>

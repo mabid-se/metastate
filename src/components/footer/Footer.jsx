@@ -1,6 +1,5 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-// import Button from "../button/Button";
 import ellipseImg from "../../assets/images/staric-ellipse-.png";
 import { ReactComponent as MetastateLogo } from "../../assets/images/metastate-logo.svg";
 import { ReactComponent as FacebookIco } from "../../assets/images/facebook.svg";
@@ -67,7 +66,6 @@ const Footer = () => {
               >
                 start now
               </Button>
-              {/* <Button variant="" btnText="start now" /> */}
             </Grid>
             <Grid
               item
@@ -79,10 +77,7 @@ const Footer = () => {
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "right center",
               }}
-            >
-              <Grid></Grid>
-              {/* <img src={ellipseImg} alt="" width="80%" /> */}
-            </Grid>
+            ></Grid>
           </Grid>
 
           <Grid mt={8} mb={2}>
@@ -146,7 +141,6 @@ const Footer = () => {
               justifyContent="center"
               alignItems="center"
               spacing={5}
-              //   style={{ marginTop: "0px" }}
             >
               <Grid item mt={2}>
                 <Typography

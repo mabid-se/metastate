@@ -1,9 +1,6 @@
 // ---| MUI Imports |---
 import { makeStyles } from "@mui/styles";
 
-// ---| Project Imports |---
-// import { myTheme } from "../../theme";
-
 export const useStyles = makeStyles((myTheme) => ({
   btnText: {
     fontFamily: "Montserrat",
@@ -20,6 +17,6 @@ export const useStyles = makeStyles((myTheme) => ({
     alignItems: "center",
     gap: 6,
     borderRadius: 32,
-    padding: "4px 10px",
+    padding: "8px 16px",
   },
 }));

@@ -20,8 +20,6 @@ const Button = ({
     >
       <Grid
         sx={{
-          py: 1,
-          px: 2,
           cursor: "pointer",
           border: variant === "gradient" ? 0 : 1,
           background:

@@ -3,7 +3,6 @@ import React from "react";
 import { ReactComponent as CardanoVector } from "../../assets/images/Vector.svg";
 import singleMetastate from "../../assets/images/Metastate-Single.png";
 import bgNet from "../../assets/images/BG-Net.png";
-// import bgBlur from "../../assets/images/BG-Blur-1.png";
 
 const BuyRealEstate = () => {
   return (
@@ -136,7 +135,7 @@ const BuyRealEstate = () => {
                       fontWeight={500}
                       fontFamily="Montserrat"
                       lineHeight="100%"
-                      // textAlign="justify"
+                      textAlign="justify"
                     >
                       Metastate is a groundbreaking platform that revolutionizes
                       the way we invest in and interact with real estate.
@@ -156,7 +155,7 @@ const BuyRealEstate = () => {
                       fontWeight={500}
                       fontFamily="Montserrat"
                       lineHeight="100%"
-                      // textAlign="justify"
+                      textAlign="justify"
                     >
                       Through Metastate, we bridge the traditional real estate
                       market with the innovative world of digital assets. By
