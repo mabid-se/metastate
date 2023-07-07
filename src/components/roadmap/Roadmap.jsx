@@ -35,18 +35,17 @@ const Roadmap = () => {
               direction="row"
               justifyContent="space-between"
               alignItems="flex-start"
+              mt={4}
             >
               <Grid item lg={6}>
                 <Typography
                   color="#ffffff"
                   fontSize="46px"
-                  fontWeight={400}
+                  fontWeight={600}
                   fontFamily="Montserrat"
                   lineHeight="100%"
                 >
-                  Beneficial for
-                  <br />
-                  buyers and sellers
+                  Roadmap
                 </Typography>
                 <Typography
                   mt={3}
