@@ -4,6 +4,7 @@ import bulletIco from "../../assets/images/bullet-point-white.png";
 import Button from "../button/Button";
 import { ArrowRightAlt } from "@mui/icons-material";
 import searchPageImg from "../../assets/images/Search-Page.png";
+import whitePapers from "../../assets/files/whitepapers.pdf";
 
 const GetAccess = () => {
   const bulletList = [
@@ -100,16 +101,20 @@ const GetAccess = () => {
                       spacing={2}
                     >
                       <Grid item>
+                        <a style={{textDecoration:'none'}} href="https://discord.gg/9nUEkWbZ5h" target="_blank">
                         <Button
                           btnText="join discord"
                           btnEndIco={<ArrowRightAlt />}
                         />
+                      </a>
                       </Grid>
                       <Grid item>
+                      <a style={{textDecoration:'none'}} href={whitePapers}>
                         <Button
                           btnText="get the whitepaper"
                           btnEndIco={<ArrowRightAlt />}
                         />
+                      </a>
                       </Grid>
                     </Grid>
                   </Grid>

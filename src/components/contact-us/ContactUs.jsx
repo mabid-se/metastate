@@ -50,7 +50,7 @@ const ContactUs = () => {
               spacing={2}
             >
               <Grid item>
-                <a href="https://discord.gg/9nUEkWbZ5h" target="_blank">
+                <a style={{textDecoration:'none'}} href="https://discord.gg/9nUEkWbZ5h" target="_blank">
                 <Button btnText="join discord" btnEndIco={<ArrowRightAlt />} />
                 </a>
               </Grid>

@@ -98,7 +98,7 @@ const Benifits = () => {
                           </Typography>
                           <Typography
                             mt="3px"
-                            color="#ffffff"
+                            color="#C9C9C9"
                             fontSize={15}
                             fontWeight={400}
                             fontFamily="Montserrat"
@@ -159,7 +159,7 @@ const Benifits = () => {
                           </Typography>
                           <Typography
                             mt="3px"
-                            color="#ffffff"
+                            color="#C9C9C9"
                             fontSize={15}
                             fontWeight={400}
                             fontFamily="Montserrat"
