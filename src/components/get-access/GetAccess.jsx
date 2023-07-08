@@ -115,7 +115,7 @@ const GetAccess = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item lg={6} textAlign="right">
+              <Grid item lg={6} textAlign="right" style={{ zIndex: 99 }}>
                 <img
                   src={searchPageImg}
                   alt="search-page"

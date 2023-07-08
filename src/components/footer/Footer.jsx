@@ -3,7 +3,7 @@ import React from "react";
 import ellipseImg from "../../assets/images/staric-ellipse-.png";
 import { ReactComponent as MetastateLogo } from "../../assets/images/metastate-logo.svg";
 import { ReactComponent as FacebookIco } from "../../assets/images/facebook.svg";
-import { ReactComponent as WhatsappIco } from "../../assets/images/whatsapp.svg";
+import { ReactComponent as InstagramIcon } from "../../assets/images/instagram-svg.svg";
 import { ReactComponent as TwitterIco } from "../../assets/images/twitter.svg";
 import { ReactComponent as YoutubeIco } from "../../assets/images/youtube.svg";
 
@@ -17,9 +17,8 @@ const Footer = () => {
   ];
   const socialItems = [
     { name: "facebook", icon: <FacebookIco />, link: "/" },
-    { name: "whatsapp", icon: <WhatsappIco />, link: "/intro" },
-    { name: "twitter", icon: <TwitterIco />, link: "/benefits" },
-    { name: "youtube", icon: <YoutubeIco />, link: "/get-access" },
+    { name: "whatsapp", icon: <InstagramIcon />, link: "https://instagram.com/metastateproperties?igshid=MmIzYWVlNDQ5Yg==" },
+    { name: "twitter", icon: <TwitterIco />, link: "https://twitter.com/_metastate?s=21&t=NxDMJg1HWKCuTG_JgvzD4g" },
   ];
 
   return (
@@ -50,7 +49,7 @@ const Footer = () => {
                 <br />
                 in Portugal
               </Typography>
-              <Button
+              {/* <Button
                 sx={{
                   py: 1,
                   px: 2,
@@ -65,7 +64,8 @@ const Footer = () => {
                 }}
               >
                 start now
-              </Button>
+              </Button> */}
+              {/* <Button variant="" btnText="start now" /> */}
             </Grid>
             <Grid
               item
@@ -132,7 +132,7 @@ const Footer = () => {
             >
               {socialItems.map((item) => (
                 <Grid item>
-                  <a href="#">{item.icon}</a>
+                  <a href={item.link} target="_blank">{item.icon}</a>
                 </Grid>
               ))}
             </Grid>
