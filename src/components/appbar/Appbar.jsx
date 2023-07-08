@@ -35,14 +35,14 @@ const Appbar = (props) => {
           >
             <Grid item xs={4} md={3} lg={2}>
               <a href="#">
-                <MetastateLogo width="70%" height="auto" length="auto" />
+                <MetastateLogo width="100%" height="auto" length="auto" />
               </a>
             </Grid>
             <Grid item md={6} lg={7} display={{ xs: "none", md: "flex" }}>
               <Grid
                 container
                 direction="row"
-                justifyContent="center"
+                justifyContent="right"
                 alignItems="center"
                 spacing={3}
               >
@@ -68,7 +68,7 @@ const Appbar = (props) => {
               </Grid>
             </Grid>
             <Grid item md={3} lg={3} display={{ xs: "none", md: "flex" }}>
-              <Grid
+              {/* <Grid
                 container
                 direction="row"
                 justifyContent="flex-end"
@@ -85,7 +85,7 @@ const Appbar = (props) => {
                     btnEndIco={<WalletIcon />}
                   />
                 </Grid>
-              </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
         </Container>

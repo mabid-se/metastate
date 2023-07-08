@@ -2,6 +2,7 @@ import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { ReactComponent as BulletIco } from "../../assets/images/bullet-point.svg";
 import learnMoreBtn from "../../assets/images/learn-more.png";
+import whitepaper from "../../assets/files/whitepapers.pdf";
 
 const Benifits = () => {
   const investorBenefits = [
@@ -87,7 +88,7 @@ const Benifits = () => {
                         <Grid item xs={11}>
                           <Typography
                             color="#ffffff"
-                            fontSize={17}
+                            fontSize={20}
                             fontWeight={500}
                             fontFamily="Montserrat"
                           >
@@ -95,8 +96,8 @@ const Benifits = () => {
                           </Typography>
                           <Typography
                             mt="3px"
-                            color="#c9c9c9"
-                            fontSize={12}
+                            color="#C9C9C9"
+                            fontSize={15}
                             fontWeight={400}
                             fontFamily="Montserrat"
                             textAlign="justify"
@@ -148,7 +149,7 @@ const Benifits = () => {
                         <Grid item xs={11}>
                           <Typography
                             color="#ffffff"
-                            fontSize={17}
+                            fontSize={20}
                             fontWeight={500}
                             fontFamily="Montserrat"
                           >
@@ -156,8 +157,8 @@ const Benifits = () => {
                           </Typography>
                           <Typography
                             mt="3px"
-                            color="#c9c9c9"
-                            fontSize={12}
+                            color="#C9C9C9"
+                            fontSize={15}
                             fontWeight={400}
                             fontFamily="Montserrat"
                             textAlign="justify"
@@ -191,7 +192,7 @@ const Benifits = () => {
               </Typography>
             </Grid>
             <Grid item xs={2} textAlign="right">
-              <a href="#">
+              <a href={whitepaper} download>
                 <img src={learnMoreBtn} width="50%" />
               </a>
             </Grid>

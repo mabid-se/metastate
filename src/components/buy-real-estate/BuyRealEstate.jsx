@@ -117,9 +117,7 @@ const BuyRealEstate = () => {
                   fontFamily="Montserrat"
                   lineHeight="100%"
                 >
-                  What is M-
-                  <br />
-                  etastate?
+                  What is Metastate?
                 </Typography>
               </Grid>
               <Grid item>

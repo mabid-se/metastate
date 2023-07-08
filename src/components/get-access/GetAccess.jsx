@@ -4,6 +4,7 @@ import bulletIco from "../../assets/images/bullet-point-white.png";
 import Button from "../button/Button";
 import { ArrowRightAlt } from "@mui/icons-material";
 import searchPageImg from "../../assets/images/Search-Page.webp";
+import whitePapers from "../../assets/files/whitepapers.pdf";
 
 const GetAccess = () => {
   const bulletList = [
@@ -100,22 +101,33 @@ const GetAccess = () => {
                       spacing={2}
                     >
                       <Grid item>
-                        <Button
-                          btnText="join discord"
-                          btnEndIco={<ArrowRightAlt />}
-                        />
+                        <a
+                          style={{ textDecoration: "none" }}
+                          href="https://discord.gg/9nUEkWbZ5h"
+                          target="_blank"
+                        >
+                          <Button
+                            btnText="join discord"
+                            btnEndIco={<ArrowRightAlt />}
+                          />
+                        </a>
                       </Grid>
                       <Grid item>
-                        <Button
-                          btnText="get the whitepaper"
-                          btnEndIco={<ArrowRightAlt />}
-                        />
+                        <a
+                          style={{ textDecoration: "none" }}
+                          href={whitePapers}
+                        >
+                          <Button
+                            btnText="get the whitepaper"
+                            btnEndIco={<ArrowRightAlt />}
+                          />
+                        </a>
                       </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item lg={6} textAlign="right">
+              <Grid item lg={6} textAlign="right" style={{ zIndex: 99 }}>
                 <img
                   src={searchPageImg}
                   alt="search-page"
