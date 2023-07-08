@@ -3,7 +3,7 @@ import React from "react";
 import bulletIco from "../../assets/images/bullet-point-white.png";
 import Button from "../button/Button";
 import { ArrowRightAlt } from "@mui/icons-material";
-import searchPageImg from "../../assets/images/Search-Page.png";
+import searchPageImg from "../../assets/images/Search-Page.webp";
 
 const GetAccess = () => {
   const bulletList = [

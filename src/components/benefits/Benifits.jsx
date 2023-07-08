@@ -46,12 +46,10 @@ const Benifits = () => {
           <Grid
             container
             direction="row"
-            sx={{
-              borderTop: "1px solid #ffffff",
-              borderBottom: "1px solid #ffffff",
-            }}
+            borderTop="1px solid #ffffff66"
+            borderBottom="1px solid #ffffff66"
           >
-            <Grid item lg={6} py={4} sx={{ borderRight: "1px solid #ffffff" }}>
+            <Grid item lg={6} py={4} borderRight="1px solid #ffffff66">
               <Grid
                 container
                 direction="column"
@@ -97,7 +95,7 @@ const Benifits = () => {
                           </Typography>
                           <Typography
                             mt="3px"
-                            color="#ffffff"
+                            color="#c9c9c9"
                             fontSize={12}
                             fontWeight={400}
                             fontFamily="Montserrat"
@@ -158,7 +156,7 @@ const Benifits = () => {
                           </Typography>
                           <Typography
                             mt="3px"
-                            color="#ffffff"
+                            color="#c9c9c9"
                             fontSize={12}
                             fontWeight={400}
                             fontFamily="Montserrat"
@@ -179,7 +177,7 @@ const Benifits = () => {
             direction="row"
             justifyContent="space-between"
             alignItems="center"
-            borderBottom="1px solid #ffffff"
+            borderBottom="1px solid #ffffff66"
             sx={{ paddingY: "1px" }}
           >
             <Grid item xs={10}>

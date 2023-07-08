@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Grid } from "@mui/material";
 import Appbar from "../components/appbar/Appbar";
 import HeroSection from "../components/hero-section/HeroSection";
@@ -11,15 +11,51 @@ import Roadmap from "../components/roadmap/Roadmap";
 import BecomeInvestor from "../components/become-investor/BecomeInvestor";
 
 const LandingPage = () => {
+  const home = useRef();
+  const scrollHome = (e) => e.current.scrollIntoView();
+  const homeSection = () => scrollHome(home);
+
+  const intro = useRef();
+  const scrollIntro = (e) => e.current.scrollIntoView();
+  const introSection = () => scrollIntro(intro);
+
+  const benefits = useRef();
+  const scrollBenefits = (e) => e.current.scrollIntoView();
+  const benefitsSection = () => scrollBenefits(benefits);
+
+  const getAccess = useRef();
+  const scrollGetAccess = (e) => e.current.scrollIntoView();
+  const getAccessSection = () => scrollGetAccess(getAccess);
+
+  const roadmap = useRef();
+  const scrollRoadmap = (e) => e.current.scrollIntoView();
+  const roadmapSection = () => scrollRoadmap(roadmap);
+
   return (
     <>
       <Box sx={{ background: "#07080D" }}>
-        <Appbar />
+        <div ref={home}>
+          <Appbar
+            home={homeSection}
+            intro={introSection}
+            benefits={benefitsSection}
+            roadmap={roadmapSection}
+            getAccess={getAccessSection}
+          />
+        </div>
         <HeroSection />
-        <BuyRealEstate />
-        <Benifits />
-        <Roadmap />
-        <GetAccess />
+        <div ref={intro}>
+          <BuyRealEstate />
+        </div>
+        <div ref={benefits}>
+          <Benifits />
+        </div>
+        <div ref={roadmap}>
+          <Roadmap />
+        </div>
+        <div ref={getAccess}>
+          <GetAccess />
+        </div>
         <BecomeInvestor />
         <ContactUs />
         <Footer />

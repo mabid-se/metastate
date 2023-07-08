@@ -1,4 +1,4 @@
-// import "./App.css";
+import "./App.css";
 import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
 import LandingPage from "./pages/LandingPage";
 import { myTheme } from "./theme";

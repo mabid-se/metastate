@@ -29,19 +29,22 @@ const BuyRealEstate = () => {
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div
                   style={{
-                    borderTop: "1px solid #ffffff",
-                    borderColor: "#ffffff",
+                    borderTop: "1px solid #ffffff66",
                   }}
                 >
                   <div style={{ display: "flex", flexDirection: "row" }}>
                     <div
-                      style={{ width: "60%", borderRight: "1px solid #ffffff" }}
+                      style={{
+                        width: "60%",
+                        borderRight: "1px solid #ffffff66",
+                      }}
                     >
                       <Typography
                         color="#ffffff"
-                        fontSize="54px"
+                        fontSize="62px"
                         fontWeight={400}
                         fontFamily="Montserrat"
+                        lineHeight="150%"
                       >
                         Buy real estate
                       </Typography>
@@ -76,13 +79,12 @@ const BuyRealEstate = () => {
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
-                    borderTop: "1px solid #ffffff",
-                    borderBottom: "1px solid #ffffff",
-                    borderColor: "#ffffff",
+                    borderTop: "1px solid #ffffff66",
+                    borderBottom: "1px solid #ffffff66",
                   }}
                 >
                   <div
-                    style={{ width: "25%", borderRight: "1px solid #ffffff" }}
+                    style={{ width: "25%", borderRight: "1px solid #ffffff66" }}
                   >
                     <img src={singleMetastate} width="50%" />
                   </div>
@@ -95,7 +97,7 @@ const BuyRealEstate = () => {
                   >
                     <Typography
                       color="#ffffff"
-                      fontSize="54px"
+                      fontSize="57px"
                       fontWeight={400}
                       fontFamily="Montserrat"
                     >
@@ -134,7 +136,6 @@ const BuyRealEstate = () => {
                       fontSize="16px"
                       fontWeight={500}
                       fontFamily="Montserrat"
-                      lineHeight="100%"
                       textAlign="justify"
                     >
                       Metastate is a groundbreaking platform that revolutionizes
@@ -154,7 +155,6 @@ const BuyRealEstate = () => {
                       fontSize="16px"
                       fontWeight={500}
                       fontFamily="Montserrat"
-                      lineHeight="100%"
                       textAlign="justify"
                     >
                       Through Metastate, we bridge the traditional real estate
@@ -181,10 +181,10 @@ const BuyRealEstate = () => {
                 backgroundPosition: "right bottom",
               }}
             >
-              <Grid item mt={16} mb={4}>
+              <Grid item mt={16} mb={3}>
                 <Typography
                   color="#ffffff"
-                  fontSize="46px"
+                  fontSize="49px"
                   fontWeight={400}
                   fontFamily="Montserrat"
                   lineHeight="100%"

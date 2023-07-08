@@ -11,13 +11,15 @@ import { ReactComponent as WalletIcon } from "../../assets/images/Wallet.svg";
 
 import Button from "../button/Button";
 
-const Appbar = () => {
+const Appbar = (props) => {
+  const { windows, home, intro, benefits, roadmap, getAccess } = props;
+
   const menuItems = [
-    { name: "home", link: "/" },
-    { name: "intro", link: "/intro" },
-    { name: "benefits", link: "/benefits" },
-    { name: "get access", link: "/get-access" },
-    { name: "roadmap", link: "/roadmap" },
+    { name: "home", link: () => home() },
+    { name: "intro", link: () => intro() },
+    { name: "benefits", link: () => benefits() },
+    { name: "get access", link: () => getAccess() },
+    { name: "roadmap", link: () => roadmap() },
   ];
 
   return (
@@ -45,23 +47,23 @@ const Appbar = () => {
                 spacing={3}
               >
                 {menuItems.map((item, index) => (
-                  <Grid item key={index}>
-                    <a
-                      href="#"
-                      style={{ color: "#ffffff", textDecoration: "none" }}
-                    >
-                      <Typography
-                        sx={{
-                          textTransform: "capitalize",
-                          fontFamily: "Montserrat",
-                          fontWeight: 600,
-                          "&:hover": { color: "#0294FF" },
-                        }}
-                      >
-                        {item.name}
-                      </Typography>
-                    </a>
-                  </Grid>
+                  <>
+                    <Grid item key={index}>
+                      <a style={{ color: "#ffffff", textDecoration: "none" }}>
+                        <Typography
+                          sx={{
+                            textTransform: "capitalize",
+                            fontFamily: "Montserrat",
+                            fontWeight: 600,
+                            "&:hover": { color: "#0294FF" },
+                          }}
+                          onClick={item.link}
+                        >
+                          {item.name}
+                        </Typography>
+                      </a>
+                    </Grid>
+                  </>
                 ))}
               </Grid>
             </Grid>

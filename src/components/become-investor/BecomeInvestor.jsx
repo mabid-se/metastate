@@ -4,6 +4,7 @@ import walletIco from "../../assets/images/setup-wallet.png";
 import propertiesIco from "../../assets/images/search-properties.png";
 import buyingIco from "../../assets/images/start-buying.png";
 import Button from "../button/Button";
+import { ReactComponent as StarIco } from "../../assets/images/Star-1.svg";
 
 const BecomeInvestor = () => {
   const stepsData = [
@@ -50,7 +51,19 @@ const BecomeInvestor = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <Grid item>
+              <Grid item position="relative">
+                <div style={{ position: "absolute", top: "9px", left: "50px" }}>
+                  <StarIco width={28} height={28} />
+                </div>
+                <div
+                  style={{
+                    position: "absolute",
+                    right: "58px",
+                    bottom: "-7px",
+                  }}
+                >
+                  <StarIco width={28} height={28} />
+                </div>
                 <Typography
                   color="#46E4FF"
                   fontWeight={400}

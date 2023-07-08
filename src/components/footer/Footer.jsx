@@ -1,6 +1,6 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import ellipseImg from "../../assets/images/staric-ellipse-.png";
+import ellipseImg from "../../assets/images/staric-ellipse.webp";
 import { ReactComponent as MetastateLogo } from "../../assets/images/metastate-logo.svg";
 import { ReactComponent as FacebookIco } from "../../assets/images/facebook.svg";
 import { ReactComponent as WhatsappIco } from "../../assets/images/whatsapp.svg";
@@ -126,8 +126,7 @@ const Footer = () => {
               justifyContent="center"
               alignItems="center"
               spacing={3}
-              borderBottom={2}
-              borderColor="#ffffff66"
+              borderBottom="2px solid #ffffff66"
               pb={1}
             >
               {socialItems.map((item) => (
