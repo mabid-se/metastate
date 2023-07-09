@@ -103,7 +103,7 @@ const Roadmap = () => {
     {
       heading: "Q3 2024",
       description:
-        ": Expansion and Integration - Metastate aims to expand its ecosystem by integrating with external payment systems, real estate platforms, and other blockchain networks. Strategic partnerships are formed to broaden the range of investment opportunities and enhance user convenience.",
+        "Expansion and Integration - Metastate aims to expand its ecosystem by integrating with external payment systems, real estate platforms, and other blockchain networks. Strategic partnerships are formed to broaden the range of investment opportunities and enhance user convenience.",
       top: { xl: 35 },
       left: 628,
       paddingBottom: { lg: "10px", xl: "80px" },
@@ -132,7 +132,7 @@ const Roadmap = () => {
           setIsIntersecting(entry.isIntersecting),
           {
             threshold: 0.7,
-        }
+          }
         ),
       []
     );
@@ -153,78 +153,61 @@ const Roadmap = () => {
 
   useEffect(() => {
 
-      window.addEventListener("scroll", () => {
-        console.log('BckgroundSize ' + backgroundSize );
+    window.addEventListener("scroll", (event) => {
+      // ref1.current.offsetTop,
 
-        var st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop ) {
-          console.log('down Scrolling')
-          if (isInViewport1) {
-            setbackgroundSize((backgroundSize += 3));
-            setStyle({
-              background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-              backgroundSize: `${backgroundSize}px 55px`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: `left 100%`,
-            });
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      if (st > lastScrollTop && isInViewport1) {
+        setbackgroundSize((backgroundSize += 3));
+        setStyle({
+          background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+          backgroundSize: `${backgroundSize}px 55px`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: `left 100%`,
+        });
 
-            if (backgroundSize > 110 && backgroundSize < 200) {
-              setRoadMapData(stepsData2);
-            } else if (backgroundSize > 200) {
-              setRoadMapData(stepsData3);
-            }
+        if (backgroundSize > 110 && backgroundSize < 200) {
+          setRoadMapData(stepsData2);
+        } else if (backgroundSize > 200) {
+          setRoadMapData(stepsData3);
+        }
+      } else if (st < lastScrollTop && isInViewport1) {
+
+        if (backgroundSize >= 3) {
+          setbackgroundSize((backgroundSize -= 3));
+          setStyle({
+            background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+            backgroundSize: `${backgroundSize}px 55px`,
+            backgroundRepeat: "no-repeat",
+            transition: 'width 2s',
+
+            backgroundPosition: `left 100%`,
+          });
+
+          if (backgroundSize < 110 && backgroundSize < 200) {
+            setRoadMapData(stepsData1);
+          } else if (backgroundSize >= 180 && backgroundSize <= 200) {
+            setRoadMapData(stepsData2);
           }
-        } else if (st < lastScrollTop) {
-          console.log('Up Scrolling')
-          if (isInViewport1) {
-            if (backgroundSize >= 3) {
-              setbackgroundSize((backgroundSize -= 3));
-              setStyle({
-                background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-                backgroundSize: `${backgroundSize}px 55px`,
-                backgroundRepeat: "no-repeat",
-                transition: 'width 2s',
+        } else {
+          setbackgroundSize((backgroundSize = 0));
+          setStyle({
+            background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+            backgroundSize: `${backgroundSize}px 55px`,
+            backgroundRepeat: "no-repeat",
+            transition: 'width 2s',
+            backgroundPosition: `left 100%`,
+          });
+        }
+      }
+      lastScrollTop = st <= 0 ? 0 : st;
+      // For Mobile or negative scrolling
 
-                backgroundPosition: `left 100%`,
-              });
-
-              if(backgroundSize<110 && backgroundSize<200){
-                setRoadMapData(stepsData1);
-              }else if (backgroundSize >= 180 && backgroundSize <= 200) {
-                setRoadMapData(stepsData2);
-              }
-            }else{
-              setbackgroundSize((backgroundSize = 0));
-              setStyle({
-                background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-                backgroundSize: `${backgroundSize}px 55px`,
-                backgroundRepeat: "no-repeat",
-                transition: 'width 2s',
-                backgroundPosition: `left 100%`,
-              });
-            }
-          }
-        } // else was horizontal scroll
-
-        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-      }, false);
+    }, false);
 
 
 
-
-      // setbackgroundSize((backgroundSize +=3));
-      // setStyle({
-      //   background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-      //   backgroundSize: `${backgroundSize}px 55px`,
-      //   backgroundRepeat: "no-repeat",
-      //   transition: "ease-in-out 2s",
-      //   backgroundPosition: `left 100%`,
-      // });
-
-
-
-
-  },[isInViewport1]);
+  }, [isInViewport1]);
 
 
 
