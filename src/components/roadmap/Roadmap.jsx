@@ -133,7 +133,7 @@ const Roadmap = () => {
     return isIntersecting;
   }
 
-
+  let ss = useIsInViewport(ref1);
   useEffect(() => {
     window.addEventListener(
       "wheel",
@@ -142,7 +142,10 @@ const Roadmap = () => {
         console.log('ST ' + st);
         console.log('OT ' + ref1.current.offsetTop);
         const direction_1 = event.deltaY;
-        if (ref1.current.offsetTop >= st+10 && ref1.current.offsetTop < st +(ref1.current.offsetHeight *0.2)) {
+        if(!ss){
+          document.body.style.overflow = "auto";
+        }
+        if (ref1.current.offsetTop >= st+10 && ref1.current.offsetTop < st +(ref1.current.offsetHeight *0.20)) {
           if (direction_1 > 0) {
             setbackgroundSize((backgroundSize += 3));
             setStyle({
