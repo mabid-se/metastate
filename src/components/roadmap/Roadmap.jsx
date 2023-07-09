@@ -138,9 +138,11 @@ const Roadmap = () => {
     window.addEventListener(
       "wheel",
       (event) => {
-        const st = window.pageYOffset || document.documentElement.scrollTop;
+        const st = document.documentElement.scrollTop;
+        console.log('ST ' + st);
+        console.log('OT ' + ref1.current.offsetTop);
         const direction_1 = event.deltaY;
-        if (ref1.current.offsetTop >= st && ref1.current.offsetTop < st +ref1.current.offsetHeight) {
+        if (ref1.current.offsetTop >= st+10 && ref1.current.offsetTop < st +(ref1.current.offsetHeight *0.2)) {
           if (direction_1 > 0) {
             setbackgroundSize((backgroundSize += 3));
             setStyle({
