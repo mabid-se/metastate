@@ -168,8 +168,10 @@ const Roadmap = () => {
               backgroundPosition: `left 100%`,
             });
 
-            if(backgroundSize>110 && backgroundSize<289){
+            if (backgroundSize > 110 && backgroundSize < 200) {
               setRoadMapData(stepsData2);
+            } else if (backgroundSize > 200) {
+              setRoadMapData(stepsData3);
             }
           }
         } else if (st < lastScrollTop) {
@@ -186,8 +188,10 @@ const Roadmap = () => {
                 backgroundPosition: `left 100%`,
               });
 
-              if(backgroundSize<110 && backgroundSize<289){
+              if(backgroundSize<110 && backgroundSize<200){
                 setRoadMapData(stepsData1);
+              }else if (backgroundSize >= 180 && backgroundSize <= 200) {
+                setRoadMapData(stepsData2);
               }
             }else{
               setbackgroundSize((backgroundSize = 0));
