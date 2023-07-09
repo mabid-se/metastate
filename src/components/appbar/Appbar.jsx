@@ -26,12 +26,13 @@ const Appbar = (props) => {
     <>
       <AppBar sx={{ background: "#07080D", py: 2 }}>
         <CssBaseline />
-        <Container>
           <Grid
             container
             direction="row"
             justifyContent="space-between"
             alignItems="center"
+            paddingLeft={8}
+
           >
             <Grid item xs={4} md={3} lg={2}>
               <a href="#">
@@ -49,7 +50,7 @@ const Appbar = (props) => {
                 {menuItems.map((item, index) => (
                   <>
                     <Grid item key={index}>
-                      <a style={{ color: "#ffffff", textDecoration: "none" }}>
+                      <a style={{ color: "#ffffff", textDecoration: "none", cursor: "pointer" }}>
                         <Typography
                           sx={{
                             textTransform: "capitalize",
@@ -88,7 +89,6 @@ const Appbar = (props) => {
               </Grid> */}
             </Grid>
           </Grid>
-        </Container>
       </AppBar>
     </>
   );

@@ -121,7 +121,6 @@ const Roadmap = () => {
 
   const [style, setStyle] = useState();
 
-  let [backgroundPosition, setbackgroundPosition] = useState(0);
   let [backgroundSize, setbackgroundSize] = useState(0);
 
   function useIsInViewport(ref) {
@@ -130,7 +129,10 @@ const Roadmap = () => {
     const observer = useMemo(
       () =>
         new IntersectionObserver(([entry]) =>
-          setIsIntersecting(entry.isIntersecting)
+          setIsIntersecting(entry.isIntersecting),
+          {
+            threshold: 0.7,
+        }
         ),
       []
     );
@@ -141,43 +143,90 @@ const Roadmap = () => {
       return () => {
         observer.disconnect();
       };
-    }, [ref, observer]);
+    }, [ref, observer, isIntersecting]);
 
     return isIntersecting;
   }
 
-  useEffect(() => {}, []);
-
   const isInViewport1 = useIsInViewport(ref1);
-  console.log("isInViewport1: ", isInViewport1);
+  var lastScrollTop = 0;
 
   useEffect(() => {
-    // 👇️ listen for changes
 
-    const interval = setInterval(() => {
-      setbackgroundSize((backgroundSize += 3));
-      console.log(backgroundSize);
-      setStyle({
-        background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-        backgroundSize: `${backgroundSize}px 55px`,
-        backgroundRepeat: "no-repeat",
-        transition: "ease-in-out 2s",
-        backgroundPosition: `left 100%`,
-      });
-    }, 1000);
+      window.addEventListener("scroll", () => {
+        console.log('BckgroundSize ' + backgroundSize );
 
-    if (isInViewport1) {
-      if (backgroundSize > 126 && backgroundSize < 200) {
-        setRoadMapData(stepsData2);
-      } else if (backgroundSize > 200 && backgroundSize < 390) {
-        setRoadMapData(stepsData3);
-      } else if (backgroundSize > 390) {
-        clearInterval(interval);
-      }
-    } else {
-      clearInterval(interval);
-    }
-  }, [isInViewport1]);
+        var st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop ) {
+          console.log('down Scrolling')
+          if (isInViewport1) {
+            setbackgroundSize((backgroundSize += 3));
+            setStyle({
+              background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+              backgroundSize: `${backgroundSize}px 55px`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: `left 100%`,
+            });
+
+            if(backgroundSize>110 && backgroundSize<289){
+              setRoadMapData(stepsData2);
+            }
+          }
+        } else if (st < lastScrollTop) {
+          console.log('Up Scrolling')
+          if (isInViewport1) {
+            if (backgroundSize >= 3) {
+              setbackgroundSize((backgroundSize -= 3));
+              setStyle({
+                background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+                backgroundSize: `${backgroundSize}px 55px`,
+                backgroundRepeat: "no-repeat",
+                transition: 'width 2s',
+
+                backgroundPosition: `left 100%`,
+              });
+
+              if(backgroundSize<110 && backgroundSize<289){
+                setRoadMapData(stepsData1);
+              }
+            }else{
+              setbackgroundSize((backgroundSize = 0));
+              setStyle({
+                background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+                backgroundSize: `${backgroundSize}px 55px`,
+                backgroundRepeat: "no-repeat",
+                transition: 'width 2s',
+                backgroundPosition: `left 100%`,
+              });
+            }
+          }
+        } // else was horizontal scroll
+
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+      }, false);
+
+
+
+
+      // setbackgroundSize((backgroundSize +=3));
+      // setStyle({
+      //   background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+      //   backgroundSize: `${backgroundSize}px 55px`,
+      //   backgroundRepeat: "no-repeat",
+      //   transition: "ease-in-out 2s",
+      //   backgroundPosition: `left 100%`,
+      // });
+
+
+
+
+  },[isInViewport1]);
+
+
+
+
+
+
 
   return (
     <div id="roadMap" ref={ref1}>
@@ -366,7 +415,7 @@ const Roadmap = () => {
                         fontWeight={400}
                         fontFamily="Montserrat"
                         lineHeight="15px"
-                        textAlign="justify"
+                        textAlign="left"
                       >
                         {item.description}
                       </Typography>

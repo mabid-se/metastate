@@ -58,7 +58,13 @@ const LandingPage = () => {
         </div>
         <BecomeInvestor />
         <ContactUs />
-        <Footer />
+        <Footer
+          home={homeSection}
+          intro={introSection}
+          benefits={benefitsSection}
+          roadmap={roadmapSection}
+          getAccess={getAccessSection}
+        />
       </Box>
     </>
   );

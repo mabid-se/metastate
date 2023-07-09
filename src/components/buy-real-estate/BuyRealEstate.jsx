@@ -41,7 +41,7 @@ const BuyRealEstate = () => {
                     >
                       <Typography
                         color="#ffffff"
-                        fontSize="62px"
+                        fontSize="79px"
                         fontWeight={400}
                         fontFamily="Montserrat"
                         lineHeight="150%"
@@ -61,7 +61,7 @@ const BuyRealEstate = () => {
                       <div style={{ marginRight: 20 }}>
                         <Typography
                           color="#ffffff"
-                          fontSize="24px"
+                          fontSize="27px"
                           fontWeight={400}
                           fontFamily="Montserrat"
                         >
@@ -97,7 +97,7 @@ const BuyRealEstate = () => {
                   >
                     <Typography
                       color="#ffffff"
-                      fontSize="57px"
+                      fontSize="76px"
                       fontWeight={400}
                       fontFamily="Montserrat"
                     >
@@ -134,7 +134,7 @@ const BuyRealEstate = () => {
                       fontSize="16px"
                       fontWeight={500}
                       fontFamily="Montserrat"
-                      textAlign="justify"
+                      textAlign="left"
                     >
                       Metastate is a groundbreaking platform that revolutionizes
                       the way we invest in and interact with real estate.
@@ -150,10 +150,10 @@ const BuyRealEstate = () => {
                   <Grid item lg={6}>
                     <Typography
                       color="#ffffff"
-                      fontSize="16px"
+                      fontSize="17px"
                       fontWeight={500}
                       fontFamily="Montserrat"
-                      textAlign="justify"
+                      textAlign="left"
                     >
                       Through Metastate, we bridge the traditional real estate
                       market with the innovative world of digital assets. By
@@ -183,7 +183,7 @@ const BuyRealEstate = () => {
                 <Typography
                   color="#ffffff"
                   fontSize="49px"
-                  fontWeight={400}
+                  fontWeight={500}
                   fontFamily="Montserrat"
                   lineHeight="100%"
                 >

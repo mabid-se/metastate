@@ -7,14 +7,17 @@ import { ReactComponent as InstagramIcon } from "../../assets/images/instagram-s
 import { ReactComponent as TwitterIco } from "../../assets/images/twitter.svg";
 import { ReactComponent as YoutubeIco } from "../../assets/images/youtube.svg";
 
-const Footer = () => {
+const Footer = (props) => {
+  const { windows, home, intro, benefits, roadmap, getAccess } = props;
+
   const footerMenuItems = [
-    { name: "home", link: "/" },
-    { name: "intro", link: "/intro" },
-    { name: "benefits", link: "/benefits" },
-    { name: "get access", link: "/get-access" },
-    { name: "roadmap", link: "/roadmap" },
+    { name: "home", link: () => home() },
+    { name: "intro", link: () => intro() },
+    { name: "benefits", link: () => benefits() },
+    { name: "get access", link: () => getAccess() },
+    { name: "roadmap", link: () => roadmap() },
   ];
+
   const socialItems = [
     { name: "facebook", icon: <FacebookIco />, link: "/" },
     { name: "whatsapp", icon: <InstagramIcon />, link: "https://instagram.com/metastateproperties?igshid=MmIzYWVlNDQ5Yg==" },
@@ -102,8 +105,8 @@ const Footer = () => {
                   {footerMenuItems.map((item, index) => (
                     <Grid item key={index}>
                       <a
-                        href="#"
-                        style={{ color: "#ffffff", textDecoration: "none" }}
+                        onClick={item.link}
+                        style={{ color: "#ffffff", textDecoration: "none", cursor:'pointer' }}
                       >
                         <Typography
                           sx={{

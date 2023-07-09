@@ -52,13 +52,13 @@ const BecomeInvestor = () => {
               alignItems="center"
             >
               <Grid item position="relative">
-                <div style={{ position: "absolute", top: "9px", left: "50px" }}>
+                <div style={{ position: "absolute", top: "9px", left: "58px" }}>
                   <StarIco width={28} height={28} />
                 </div>
                 <div
                   style={{
                     position: "absolute",
-                    right: "58px",
+                    right: "65px",
                     bottom: "-7px",
                   }}
                 >
@@ -76,7 +76,7 @@ const BecomeInvestor = () => {
                 <Typography
                   mt={1}
                   color="#ffffff"
-                  fontSize={28}
+                  fontSize={30}
                   fontWeight={500}
                   fontFamily="Montserrat"
                   textAlign="center"
@@ -86,8 +86,8 @@ const BecomeInvestor = () => {
                 <Typography
                   mt={1}
                   color="#ffffff"
-                  fontSize={13}
-                  fontWeight={500}
+                  fontSize={14}
+                  fontWeight={600}
                   fontFamily="Montserrat"
                   textAlign="center"
                 >
@@ -145,9 +145,9 @@ const BecomeInvestor = () => {
                 </Grid>
               </Grid>
 
-              <Grid item>
+             { /*<Grid item>
                 <Button btnText="start now" />
-              </Grid>
+              </Grid> */}
             </Grid>
           </Grid>
         </Box>

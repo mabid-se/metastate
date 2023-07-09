@@ -4,6 +4,7 @@ import bgNetRev from "../../assets/images/BG-net-reversed.png";
 import Button from "../button/Button";
 import { ArrowRightAlt } from "@mui/icons-material";
 
+
 const ContactUs = () => {
   return (
     <Box pt={6}>
@@ -55,7 +56,9 @@ const ContactUs = () => {
                 </a>
               </Grid>
               <Grid item>
+              <a style={{textDecoration:'none'}} href="mailto:info@metastateproperties.io">
                 <Button btnText="contact" btnEndIco={<ArrowRightAlt />} />
+                </a>
               </Grid>
             </Grid>
           </Grid>

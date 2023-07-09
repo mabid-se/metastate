@@ -8,7 +8,7 @@ const HeroSection = () => {
         sx={{
           backgroundImage: `url(${heroBg})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "100% 122%",
+          backgroundSize: "110% 115%",
           backgroundPosition: "center top",
         }}
       >
@@ -18,8 +18,8 @@ const HeroSection = () => {
           justifyContent="center"
           alignItems="flex-start"
           width={{ xs: "85%", lg: "55%" }}
-          height="110vh"
-          paddingLeft={10}
+          height="100vh"
+          paddingLeft={9}
         >
           <Grid item>
             <Typography
@@ -34,12 +34,12 @@ const HeroSection = () => {
               Real Estate
             </Typography>
           </Grid>
-          <Grid item width="80%" mt={4}>
+          <Grid item width="80%" mt={5}>
             <Typography
               color="#ffffff"
               fontFamily="Montserrat"
-              fontSize={22}
-              fontWeight={500}
+              fontSize={23}
+              fontWeight={600}
             >
               Metastate is lowering the entry barrier to the real estate market
               and making it accesible for everyone.
