@@ -39,7 +39,7 @@ const Appbar = (props) => {
                 <MetastateLogo width="100%" height="auto" length="auto" />
               </a>
             </Grid>
-            <Grid item md={6} lg={7} display={{ xs: "none", md: "flex" }}>
+            <Grid item md={6} lg={10} display={{ xs: "none", md: "flex" }} paddingRight={8}>
               <Grid
                 container
                 direction="row"

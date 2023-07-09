@@ -13,7 +13,7 @@ const Roadmap = () => {
         "Project inception - The idea for Metastate is conceived and the core team is formed. Extensive research and analysis are counducted to shape the platforms vision and goals",
       top: { lg: 170, xl: 213 },
       left: 70,
-      paddingBottom: { lg: "97px", xl: "108px" },
+      paddingBottom: { lg: "8%", xl: "108px" },
     },
     {
       heading: "Q2 2023",
@@ -21,7 +21,7 @@ const Roadmap = () => {
         "Whitepaper and Tokenomics - The whitepaper is finalized, outlining the platform's architecture, functionalities, and tokenomics. The team conducts internal reviews and seeks feedback from industry experts.",
       top: { lg: 95, xl: 135 },
       left: 354,
-      paddingBottom: { lg: "85px", xl: "88px" },
+      paddingBottom: { lg: "6%", xl: "88px" },
     },
     {
       heading: "Q3 2023",
@@ -29,7 +29,7 @@ const Roadmap = () => {
         "Team Expansion and Partnerships - The core team expands with the addition of key talents across various domains. Partnerships with industry-leading organizations and blockchain experts are established to enhance the project's credibility and expertise.",
       top: { lg: 10, xl: 35 },
       left: 628,
-      paddingBottom: { lg: "67px", xl: "80px" },
+      paddingBottom: { lg: "5%", xl: "80px" },
     },
     {
       heading: "Q4 2023",
@@ -37,7 +37,7 @@ const Roadmap = () => {
         "Token Pre-sale and Public Sale - The Metastate Token (Mets) - In the fourth quarter of 2023, we are thrilled to launch the Metastate Token (METS) as the heart of our ecosystem. METS will serve as the primary utility token, powering transactions, staking, and accessing exclusive features within the Metastate platform.",
       top: "-65px",
       left: 903,
-      paddingBottom: { lg: "50px", xl: "78px" },
+      paddingBottom: { lg: "4%", xl: "78px" },
     },
   ];
   const stepsData2 = [
@@ -47,7 +47,7 @@ const Roadmap = () => {
         "Blockchain Integration - Metastate selects the Cardano blockchain as the underlying infrastructure due to its scalability, security, and sustainability features. Integration with the Cardano network begins, leveraging its advanced smart contract capabilities",
       top: { lg: 160, xl: 213 },
       left: 70,
-      paddingBottom: "50px",
+      paddingBottom: { lg: "3%", xl: "108px" },
     },
     {
       heading: "Q2 2023",
@@ -55,7 +55,7 @@ const Roadmap = () => {
         "MVP Development - The Minimum Viable Product (MVP) development commences, focusing on core functionalities such as property tokenization, ownership transfers, and staking mechanisms. User interface design and user experience optimization are prioritized during this phase",
       top: { lg: 95, xl: 130 },
       left: 354,
-      paddingBottom: { lg: "38px", xl: "50px" },
+      paddingBottom: { lg: "3%", xl: "88px" },
     },
     {
       heading: "Q3 2023",
@@ -63,7 +63,7 @@ const Roadmap = () => {
         "MVP Testing and Feedback - The MVP undergoes rigorous testing and auditing to ensure security, performance, and functionality. External beta testing is conducted to gather user feedback and refine the platform based on user insights.",
       top: { lg: 25, xl: 65 },
       left: 628,
-      paddingBottom: { lg: "66px", xl: "63px" },
+      paddingBottom: { lg: "5%", xl: "80px" },
     },
     {
       heading: "Q4 2023",
@@ -71,7 +71,7 @@ const Roadmap = () => {
         "Blockchain Integration - Metastate selects the Cardano blockchain as the underlying infrastructure due to its scalability, security, and sustainability features. Integration with the Cardano network begins, leveraging its advanced smart contract capabilities",
       top: { lg: "-65px", xl: "-27px" },
       left: 903,
-      paddingBottom: { lg: "50px", xl: "40px" },
+      paddingBottom: { lg: "4%", xl: "78px" },
     },
   ];
   const stepsData3 = [
@@ -81,7 +81,7 @@ const Roadmap = () => {
         "Public Launch - The Metastate platform is officially launched to the public. The platform opens for property tokenization, investment, and staking.",
       top: { lg: 195, xl: 250 },
       left: 70,
-      paddingBottom: "88px",
+      paddingBottom: { lg: "6%", xl: "108px" },
     },
     {
       heading: "Q2 2024",
@@ -89,7 +89,7 @@ const Roadmap = () => {
         "Platform Enhancement and Community Growth - Continuous enhancements and updates are made to the Metastate platform based on user feedback and market demands. Community engagement initiatives, educational resources, and partnerships are established to foster a growing and supportive user base",
       top: 95,
       left: 354,
-      paddingBottom: { lg: "24px", xl: "70px" },
+      paddingBottom: { lg: "2%", xl: "70px" },
     },
     {
       heading: "Q3 2024",
@@ -97,7 +97,7 @@ const Roadmap = () => {
         "Expansion and Integration - Metastate aims to expand its ecosystem by integrating with external payment systems, real estate platforms, and other blockchain networks. Strategic partnerships are formed to broaden the range of investment opportunities and enhance user convenience.",
       top: { lg: 13, xl: 30 },
       left: 628,
-      paddingBottom: { lg: "49px", xl: "70px" },
+      paddingBottom: { lg: "3%", xl: "70px" },
     },
     {
       heading: "Q4 2024",
@@ -105,7 +105,7 @@ const Roadmap = () => {
         "Blockchain Integration - Metastate selects the Cardano blockchain as the underlying infrastructure due to its scalability, security, and sustainability features. Integration with the Cardano network begins, leveraging its advanced smart contract capabilities",
       top: "-40px",
       left: 903,
-      paddingBottom: { lg: "24px", xl: "55px" },
+      paddingBottom: { lg: "2%", xl: "70px" },
     },
   ];
 
@@ -119,7 +119,7 @@ const Roadmap = () => {
       () =>
         new IntersectionObserver(
           ([entry]) => setIsIntersecting(entry.isIntersecting),
-          { threshold: 0.7 }
+          { threshold: 0.5 }
         ),
       []
     );
@@ -133,45 +133,54 @@ const Roadmap = () => {
     return isIntersecting;
   }
 
-  const isInViewport1 = useIsInViewport(ref1);
-  var lastScrollTop = 0;
 
   useEffect(() => {
     window.addEventListener(
-      "scroll",
+      "wheel",
       (event) => {
-        // ref1.current.offsetTop,
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+        const direction_1 = event.deltaY;
 
-        var st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop && isInViewport1) {
-          setbackgroundSize((backgroundSize += 3));
-          setStyle({
-            background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-            backgroundSize: `${backgroundSize}px 55px`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: `left 100%`,
-          });
-          if (backgroundSize > 110 && backgroundSize < 200) {
-            setRoadMapData(stepsData2);
-          } else if (backgroundSize > 200) {
-            setRoadMapData(stepsData3);
-          }
-        } else if (st < lastScrollTop && isInViewport1) {
-          if (backgroundSize >= 3) {
-            setbackgroundSize((backgroundSize -= 3));
+        if (ref1.current.offsetTop >= st && ref1.current.offsetTop < st +100) {
+          if (direction_1 > 0) {
+            setbackgroundSize((backgroundSize += 3));
             setStyle({
               background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
               backgroundSize: `${backgroundSize}px 55px`,
               backgroundRepeat: "no-repeat",
-              transition: "width 2s",
               backgroundPosition: `left 100%`,
             });
-            if (backgroundSize < 110 && backgroundSize < 200) {
-              setRoadMapData(stepsData1);
-            } else if (backgroundSize >= 180 && backgroundSize <= 200) {
+            document.body.style.overflow = "hidden";
+            if (backgroundSize > 110 && backgroundSize < 200) {
               setRoadMapData(stepsData2);
+            } else if (backgroundSize > 200) {
+              setRoadMapData(stepsData3);
             }
-          } else {
+
+            if (backgroundSize > 300) {
+              document.body.style.overflow = "auto";
+              return;
+            }
+            return;
+          } else if (direction_1 < 0) {
+            if (backgroundSize >= 3) {
+              setbackgroundSize((backgroundSize -= 3));
+              setStyle({
+                background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+                backgroundSize: `${backgroundSize}px 55px`,
+                backgroundRepeat: "no-repeat",
+                transition: "width 2s",
+                backgroundPosition: `left 100%`,
+              });
+              if (backgroundSize < 110 && backgroundSize < 200) {
+                setRoadMapData(stepsData1);
+              } else if (backgroundSize >= 180 && backgroundSize <= 200) {
+                setRoadMapData(stepsData2);
+              }
+              document.body.style.overflow = "hidden";
+              return;
+            }
+            document.body.style.overflow = "auto";
             setbackgroundSize((backgroundSize = 0));
             setStyle({
               background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
@@ -182,12 +191,10 @@ const Roadmap = () => {
             });
           }
         }
-        lastScrollTop = st <= 0 ? 0 : st;
-        // For Mobile or negative scrolling
       },
       false
     );
-  }, [isInViewport1]);
+  }, []);
 
   return (
     <div id="roadMap" ref={ref1}>
@@ -320,7 +327,7 @@ const Roadmap = () => {
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
                 backgroundPosition: "center bottom",
-                height: { lg: "80vh", xl: "60vh" },
+                height: { lg: "60vh", xl: "60vh" },
               }}
             >
               <Grid container justifyContent="flex-start">
