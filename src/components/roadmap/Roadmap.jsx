@@ -147,7 +147,7 @@ const Roadmap = () => {
         }
         if (
           ref1.current.offsetTop >= st + 10 &&
-          ref1.current.offsetTop < st + ref1.current.offsetHeight * 0.2
+          ref1.current.offsetTop < st + ref1.current.offsetHeight * 0.9
         ) {
           if (direction_1 > 0) {
             setbackgroundSize((backgroundSize += 3));
