@@ -138,6 +138,7 @@ const Roadmap = () => {
     window.addEventListener(
       "wheel",
       (event) => {
+
         const st = document.documentElement.scrollTop;
         console.log("ST " + st);
         console.log("OT " + ref1.current.offsetTop);
@@ -150,7 +151,12 @@ const Roadmap = () => {
           ref1.current.offsetTop < st + ref1.current.offsetHeight * 0.9
         ) {
           if (direction_1 > 0) {
-            setbackgroundSize((backgroundSize += 3));
+            if(!backgroundSize<=0)
+            document.getElementById("roadMap").scrollIntoView({
+              behavior: "smooth",
+              block:    "nearest",
+              inline:   "nearest",
+            });            setbackgroundSize((backgroundSize += 3));
             setStyle({
               background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
               backgroundSize: `${backgroundSize}px 55px`,
@@ -170,6 +176,11 @@ const Roadmap = () => {
             return;
           } else if (direction_1 < 0) {
             if (backgroundSize >= 3) {
+              document.getElementById("roadMap").scrollIntoView({
+                behavior: "smooth",
+                block:    "nearest",
+                inline:   "nearest",
+              });
               setbackgroundSize((backgroundSize -= 3));
               setStyle({
                 background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,

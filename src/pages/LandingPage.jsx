@@ -44,23 +44,23 @@ const LandingPage = () => {
           />
         </div>
         <HeroSection />
-        <div ref={intro}>{/* <BuyRealEstate /> */}</div>
+        <div ref={intro}><BuyRealEstate /></div>
         <div ref={benefits}>
           <Benifits />
         </div>
-        <div ref={roadmap}>{/* <Roadmap /> */}</div>
+        <div ref={roadmap}><Roadmap /></div>
         <div ref={getAccess}>
           <GetAccess />
         </div>
-        {/* <BecomeInvestor /> */}
-        {/* <ContactUs /> */}
-        {/* <Footer
+        <BecomeInvestor />
+        <ContactUs />
+        { <Footer
           home={homeSection}
           intro={introSection}
           benefits={benefitsSection}
           roadmap={roadmapSection}
           getAccess={getAccessSection} 
-        />*/}
+        />}
       </Box>
     </>
   );
