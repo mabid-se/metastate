@@ -61,7 +61,7 @@ const BuyRealEstate = () => {
                       <Grid item width="70%" px={1}>
                         <Typography
                           color="#ffffff"
-                          fontSize="15px"
+                          fontSize="14px"
                           fontWeight={400}
                           fontFamily="Montserrat"
                         >
@@ -190,7 +190,7 @@ const BuyRealEstate = () => {
               <Grid item mt={{ xs: 4, md: 0 }}>
                 <Typography
                   color="#ffffff"
-                  fontSize="46px"
+                  fontSize={{xs:'36px', md:"46px"}}
                   fontWeight={400}
                   fontFamily="Montserrat"
                   lineHeight="100%"

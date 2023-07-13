@@ -51,7 +51,7 @@ const LandingPage = () => {
           <Benifits />
         </div>
         <div ref={roadmap}>
-          <Grid display={{ xs: "none", md: "flex" }}>
+          <Grid display={{ xs: "none", md: "block" }}>
             <Roadmap />
           </Grid>
         </div>

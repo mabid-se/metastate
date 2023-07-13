@@ -103,7 +103,7 @@ const BecomeInvestor = () => {
                   sx={{
                     position: "absolute",
                     right: "90px",
-                    bottom: "-25px",
+                    bottom: "0 px",
                     display: { xs: "flex", md: "none" },
                   }}
                 >
@@ -131,8 +131,8 @@ const BecomeInvestor = () => {
                 <Typography
                   mt={1}
                   color="#ffffff"
-                  fontSize={14}
-                  fontWeight={600}
+                  fontSize={{xs:18,md:14}}
+                  fontWeight={{xs:500,md:600}}
                   fontFamily="Montserrat"
                   textAlign="center"
                 >

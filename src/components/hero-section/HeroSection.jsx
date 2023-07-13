@@ -8,7 +8,7 @@ const HeroSection = () => {
         sx={{
           backgroundImage: `url(${heroBg})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: { xs: "190% 106%", md: "110% 115%" },
+          backgroundSize: { xs: "190% 94%", md: "110% 115%" },
           backgroundPosition: { xs: "center top", md: "center top" },
         }}
       >
