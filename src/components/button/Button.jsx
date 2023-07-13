@@ -9,6 +9,7 @@ const Button = ({
   btnStartIco,
   btnText,
   btnEndIco,
+  btnWidth,
 }) => {
   const styleClasses = useStyles();
   return (
@@ -21,6 +22,7 @@ const Button = ({
       <Grid
         sx={{
           cursor: "pointer",
+          width: btnWidth === "fullWidth" ? "100%" : "auto",
           border: variant === "gradient" ? 0 : 1,
           background:
             variant === "gradient"

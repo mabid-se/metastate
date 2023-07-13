@@ -7,7 +7,6 @@ export const useStyles = makeStyles((myTheme) => ({
     fontWeight: "medium",
     textDecoration: "none",
     textTransform: "capitalize",
-    textDecoration: "none",
   },
   btnContainer: {
     display: "flex",

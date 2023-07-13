@@ -1,7 +1,7 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import bulletIco from "../../assets/images/bullet-point-white.png";
-import Button from "../button/Button";
+// import Button from "../button/Button";
 import { ArrowRightAlt } from "@mui/icons-material";
 import searchPageImg from "../../assets/images/Search-Page.webp";
 import whitePapers from "../../assets/files/whitepapers.pdf";
@@ -18,8 +18,14 @@ const GetAccess = () => {
   return (
     <div>
       <>
-        <Box py={4} position="relative">
-          <div
+        <Box
+          py={{ xs: 6, md: 0 }}
+          px={{ xs: 3, md: 0 }}
+          position="relative"
+          sx={{ width: "100%" }}
+        >
+          <Grid
+            display={{ xs: "none", md: "flex" }}
             style={{
               zIndex: 0,
               position: "absolute",
@@ -34,14 +40,14 @@ const GetAccess = () => {
               filter: "blur(125px)",
             }}
           />
-          <div style={{ zIndex: 99 }}>
+          <Grid style={{ zIndex: 99 }}>
             <Grid
               container
               direction="row"
               justifyContent="space-between"
               alignItems="center"
             >
-              <Grid item lg={6} pl={12}>
+              <Grid item xs={12} md={6} pl={{ md: 12 }}>
                 <Grid
                   container
                   direction="column"
@@ -83,8 +89,8 @@ const GetAccess = () => {
                           <Typography
                             color="#ffffff"
                             fontFamily="Montserrat"
-                            fontSize="16px"
-                            fontWeight={600}
+                            fontSize="17px"
+                            fontWeight={400}
                           >
                             {item}
                           </Typography>
@@ -92,42 +98,86 @@ const GetAccess = () => {
                       </Grid>
                     ))}
                   </Grid>
-                  <Grid item mt={4}>
+                  <Grid item mt={4} width="100%">
                     <Grid
                       container
-                      direction="row"
-                      justifyContent="flex-start"
-                      alignItems="center"
-                      spacing={2}
+                      direction={{ xs: "column", md: "row" }}
+                      justifyContent={{ xs: "center", md: "flex-start" }}
+                      alignItems={{ xs: "center", md: "center" }}
+                      spacing={{ xs: 3, md: 2 }}
                     >
-                      <Grid item>
+                      <Grid item width="100%">
                         <a
                           style={{ textDecoration: "none" }}
                           href="https://discord.gg/9nUEkWbZ5h"
                           target="_blank"
                         >
                           <Button
-                            btnText="join discord"
-                            btnEndIco={<ArrowRightAlt />}
-                          />
+                            // btnText="join discord"
+                            // btnEndIco={<ArrowRightAlt />}
+                            endIcon={<ArrowRightAlt />}
+                            sx={{
+                              py: 1,
+                              px: 2,
+                              width: { xs: "100%", md: "auto" },
+                              color: "#ffffff",
+                              fontWeight: "medium",
+                              fontFamily: "Montserrat",
+                              borderRadius: 5,
+                              border: 1,
+                              textTransform: "capitalize",
+                              "&:hover": { background: "transparent" },
+                            }}
+                          >
+                            join discord
+                          </Button>
                         </a>
                       </Grid>
-                      <Grid item>
+                      <Grid item width="100%">
                         <a
                           style={{ textDecoration: "none" }}
                           href={whitePapers}
                         >
                           <Button
-                            btnText="get the whitepaper"
-                            btnEndIco={<ArrowRightAlt />}
-                          />
+                            // btnText="join discord"
+                            // btnEndIco={<ArrowRightAlt />}
+                            endIcon={<ArrowRightAlt />}
+                            sx={{
+                              py: 1,
+                              px: 2,
+                              width: { xs: "100%", md: "auto" },
+                              color: "#ffffff",
+                              fontWeight: "medium",
+                              fontFamily: "Montserrat",
+                              borderRadius: 5,
+                              border: 1,
+                              textTransform: "capitalize",
+                              "&:hover": { background: "transparent" },
+                            }}
+                          >
+                            get the whitepaper
+                          </Button>
                         </a>
                       </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item lg={6} textAlign="right" style={{ zIndex: 99 }}>
+              <Grid item xs={12} mt={8} display={{ xs: "flex", md: "none" }}>
+                <img
+                  src={searchPageImg}
+                  alt="search-page"
+                  width="100%"
+                  height="70%"
+                />
+              </Grid>
+              <Grid
+                item
+                md={6}
+                display={{ xs: "none", md: "block" }}
+                textAlign="right"
+                style={{ zIndex: 99 }}
+              >
                 <img
                   src={searchPageImg}
                   alt="search-page"
@@ -136,7 +186,7 @@ const GetAccess = () => {
                 />
               </Grid>
             </Grid>
-          </div>
+          </Grid>
         </Box>
       </>
     </div>

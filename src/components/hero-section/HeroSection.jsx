@@ -8,8 +8,8 @@ const HeroSection = () => {
         sx={{
           backgroundImage: `url(${heroBg})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "110% 115%",
-          backgroundPosition: "center top",
+          backgroundSize: { xs: "190% 106%", md: "110% 115%" },
+          backgroundPosition: { xs: "center top", md: "center top" },
         }}
       >
         <Grid
@@ -17,29 +17,57 @@ const HeroSection = () => {
           direction="column"
           justifyContent="center"
           alignItems="flex-start"
-          width={{ xs: "85%", lg: "55%" }}
+          width={{ xs: "90%", lg: "55%" }}
           height="100vh"
-          paddingLeft={9}
+          paddingLeft={{ xs: 3, md: 9 }}
         >
           <Grid item>
             <Typography
               color="#ffffff"
               fontFamily="Montserrat"
+              fontSize={40}
+              fontWeight={500}
+              lineHeight="110%"
+              display={{ xs: "flex", md: "none" }}
+              mt={2}
+            >
+              Rebirth of Real
+              <br />
+              Estate
+            </Typography>
+            <Typography
+              color="#ffffff"
+              fontFamily="Montserrat"
               fontSize={82}
               fontWeight={600}
-              lineHeight="98%"
+              lineHeight={"98%"}
+              display={{ xs: "none", md: "flex" }}
             >
               Rebirth of
               <br />
               Real Estate
             </Typography>
           </Grid>
-          <Grid item width="80%" mt={5}>
+          <Grid item mt={{ xs: 2, lg: 5 }}>
+            <Typography
+              color="#ffffff"
+              fontFamily="Montserrat"
+              fontSize={16}
+              fontWeight={400}
+              display={{ xs: "flex", md: "none" }}
+            >
+              Metastate is lowering the entry barrier
+              <br />
+              to the real estate market and making it
+              <br />
+              accesible for everyone.
+            </Typography>
             <Typography
               color="#ffffff"
               fontFamily="Montserrat"
               fontSize={23}
               fontWeight={600}
+              display={{ xs: "none", md: "flex" }}
             >
               Metastate is lowering the entry barrier to the real estate market
               and making it accesible for everyone.

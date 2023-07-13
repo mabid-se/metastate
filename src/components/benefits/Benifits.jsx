@@ -42,8 +42,145 @@ const Benifits = () => {
 
   return (
     <>
-      <Box mt={8}>
-        <Container>
+      <Box mt={{ xs: 0, md: 8 }}>
+        <Grid
+          container
+          direction="column"
+          display={{ xs: "flex", md: "none" }}
+          borderTop="1px solid #ffffff66"
+          borderBottom="1px solid #ffffff66"
+        >
+          <Grid item py={8} px={3}>
+            <Grid
+              container
+              direction="column"
+              justifyContent="flex-start"
+              alignItems="flex-start"
+            >
+              <Grid item>
+                <Typography
+                  color="#ffffff"
+                  fontFamily="Montserrat"
+                  fontSize={30}
+                  fontWeight={500}
+                >
+                  Benefits for Investors
+                </Typography>
+              </Grid>
+              <Grid item mt={2}>
+                {investorBenefits.map((item, index) => (
+                  <Grid
+                    container
+                    direction="row"
+                    justifyContent="flex-start"
+                    alignItems="flex-start"
+                    key={index}
+                    mt={3}
+                  >
+                    <Grid item xs={2}>
+                      <BulletIco width="24" />
+                    </Grid>
+                    <Grid item xs={10}>
+                      <Typography
+                        color="#ffffff"
+                        fontSize={20}
+                        fontWeight={500}
+                        fontFamily="Montserrat"
+                      >
+                        {item.heading}
+                      </Typography>
+                      <Typography
+                        mt="3px"
+                        color="#C9C9C9"
+                        fontSize={15}
+                        fontWeight={400}
+                        fontFamily="Montserrat"
+                      >
+                        {item.details}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item py={8} px={3} borderTop="1px solid #ffffff66">
+            <Grid
+              container
+              direction="column"
+              justifyContent="flex-start"
+              alignItems="flex-start"
+            >
+              <Grid item>
+                <Typography
+                  color="#ffffff"
+                  fontFamily="Montserrat"
+                  fontSize={30}
+                  fontWeight={500}
+                >
+                  Benefits for Property Owners
+                </Typography>
+              </Grid>
+              <Grid item mt={2}>
+                {ownersBenefits.map((item, index) => (
+                  <Grid
+                    container
+                    direction="row"
+                    justifyContent="flex-start"
+                    alignItems="flex-start"
+                    key={index}
+                    mt={3}
+                  >
+                    <Grid item xs={2}>
+                      <BulletIco width="24" />
+                    </Grid>
+                    <Grid item xs={10}>
+                      <Typography
+                        color="#ffffff"
+                        fontSize={20}
+                        fontWeight={500}
+                        fontFamily="Montserrat"
+                      >
+                        {item.heading}
+                      </Typography>
+                      <Typography
+                        mt="3px"
+                        color="#C9C9C9"
+                        fontSize={15}
+                        fontWeight={400}
+                        fontFamily="Montserrat"
+                      >
+                        {item.details}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <Grid item py={8} px={3} borderTop="1px solid #ffffff66">
+            <Grid container direction="column">
+              <Grid item textAlign="center">
+                <Typography
+                  color="#ffffff"
+                  fontFamily="Montserrat"
+                  fontSize={28}
+                  fontWeight={500}
+                >
+                  Get the whitepaper for more details
+                </Typography>
+              </Grid>
+              <Grid item textAlign="center">
+                <a href={whitepaper} download>
+                  <img src={learnMoreBtn} width="50%" />
+                </a>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+
+        <Container sx={{ display: { xs: "none", md: "block" } }}>
           <Grid
             container
             direction="row"
@@ -82,10 +219,10 @@ const Benifits = () => {
                         key={index}
                         pr={2}
                       >
-                        <Grid item xs={1}>
+                        <Grid item md={1}>
                           <BulletIco width="24" />
                         </Grid>
-                        <Grid item xs={11}>
+                        <Grid item md={11}>
                           <Typography
                             color="#ffffff"
                             fontSize={20}
