@@ -153,7 +153,6 @@ const Roadmap = () => {
           if (direction_1 > 0) {
             if(!backgroundSize<=0)
             document.getElementById("roadMap").scrollIntoView({
-              behavior: "smooth",
               block:    "nearest",
               inline:   "nearest",
             });            setbackgroundSize((backgroundSize += 3));
@@ -176,11 +175,7 @@ const Roadmap = () => {
             return;
           } else if (direction_1 < 0) {
             if (backgroundSize >= 3) {
-              document.getElementById("roadMap").scrollIntoView({
-                behavior: "smooth",
-                block:    "nearest",
-                inline:   "nearest",
-              });
+              document.getElementById("roadMap").scrollIntoView(false);
               setbackgroundSize((backgroundSize -= 3));
               setStyle({
                 background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
