@@ -3,6 +3,7 @@ import React from "react";
 import { ReactComponent as CardanoVector } from "../../assets/images/Vector.svg";
 import singleMetastate from "../../assets/images/Metastate-Single.png";
 import bgNet from "../../assets/images/BG-Net.png";
+import bgNetMob from "../../assets/images/bg-net-mob.png";
 
 const BuyRealEstate = () => {
   return (
@@ -24,8 +25,85 @@ const BuyRealEstate = () => {
           }}
         />
         <div style={{ zIndex: 99 }}>
+          <Grid py={4} display={{ xs: "flex", md: "none" }}>
+            <Grid container direction="column">
+              <Grid borderTop="1px solid #ffffff66">
+                <Grid container direction="row">
+                  <Grid
+                    item
+                    width="60%"
+                    borderRight="1px solid #ffffff66"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <Typography
+                      color="#ffffff"
+                      fontSize="24px"
+                      fontWeight={400}
+                      fontFamily="Montserrat"
+                      textAlign="center"
+                    >
+                      Buy real estate
+                    </Typography>
+                  </Grid>
+                  <Grid item width="40%">
+                    <Grid
+                      container
+                      direction="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      px={1}
+                    >
+                      <Grid item width="30%" pl={1}>
+                        <CardanoVector width="85%" />
+                      </Grid>
+                      <Grid item width="70%" px={1}>
+                        <Typography
+                          color="#ffffff"
+                          fontSize="15px"
+                          fontWeight={400}
+                          fontFamily="Montserrat"
+                        >
+                          Powered by Cardano
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid
+                container
+                direction="row"
+                alignItems="center"
+                borderTop="1px solid #ffffff66"
+                borderBottom="1px solid #ffffff66"
+              >
+                <Grid
+                  item
+                  width="30%"
+                  borderRight="1px solid #ffffff66"
+                  textAlign="center"
+                  py={1}
+                >
+                  <img src={singleMetastate} width="65%" />
+                </Grid>
+                <Grid item width="70%" px={2}>
+                  <Typography
+                    color="#ffffff"
+                    fontSize="24px"
+                    fontWeight={400}
+                    fontFamily="Montserrat"
+                    textAlign="right"
+                  >
+                    one m2 at the time
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
           <Container>
-            <Grid py={12}>
+            <Grid py={12} display={{ xs: "none", md: "flex" }}>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div
                   style={{
@@ -108,8 +186,8 @@ const BuyRealEstate = () => {
               </div>
             </Grid>
 
-            <Grid container direction="column" spacing={3}>
-              <Grid item>
+            <Grid container direction="column" spacing={3} px={1}>
+              <Grid item mt={{ xs: 4, md: 0 }}>
                 <Typography
                   color="#ffffff"
                   fontSize="46px"
@@ -126,15 +204,15 @@ const BuyRealEstate = () => {
                   direction="row"
                   justifyContent="center"
                   alignItems="stretch"
-                  spacing={10}
+                  spacing={{ xs: 4, md: 10 }}
                 >
-                  <Grid item lg={6}>
+                  <Grid item lg={6} mt={{ xs: 1, md: 0 }}>
                     <Typography
                       color="#ffffff"
                       fontSize="16px"
                       fontWeight={500}
                       fontFamily="Montserrat"
-                      textAlign="left"
+                      textAlign={{ xs: "justify", md: "left" }}
                     >
                       Metastate is a groundbreaking platform that revolutionizes
                       the way we invest in and interact with real estate.
@@ -147,13 +225,13 @@ const BuyRealEstate = () => {
                       enthusiasts.
                     </Typography>
                   </Grid>
-                  <Grid item lg={6}>
+                  <Grid item lg={6} mt={{ xs: 1, md: 0 }}>
                     <Typography
                       color="#ffffff"
                       fontSize="17px"
                       fontWeight={500}
                       fontFamily="Montserrat"
-                      textAlign="left"
+                      textAlign={{ xs: "justify", md: "left" }}
                     >
                       Through Metastate, we bridge the traditional real estate
                       market with the innovative world of digital assets. By
@@ -168,21 +246,24 @@ const BuyRealEstate = () => {
                 </Grid>
               </Grid>
             </Grid>
-
             <Grid
               container
-              mt={6}
+              mt={{ xs: 2, md: 6 }}
+              mb={{ xs: 6, md: 0 }}
               sx={{
-                backgroundImage: `url(${bgNet})`,
+                backgroundImage: {
+                  xs: `url(${bgNetMob})`,
+                  md: `url(${bgNet})`,
+                },
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "80% 100%",
+                backgroundSize: { xs: "95% 85%", md: "80% 100%" },
                 backgroundPosition: "right bottom",
               }}
             >
-              <Grid item mt={16} mb={3}>
+              <Grid item mt={{ xs: 12, md: 16 }} mb={3} px={1}>
                 <Typography
                   color="#ffffff"
-                  fontSize="49px"
+                  fontSize={{ xs: "29px", md: "49px" }}
                   fontWeight={500}
                   fontFamily="Montserrat"
                   lineHeight="100%"

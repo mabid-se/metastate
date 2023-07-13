@@ -29,11 +29,29 @@ const BecomeInvestor = () => {
   return (
     <div>
       <>
-        <Box sx={{ background: "#07080D", position: "relative" }}>
+        <Box
+          sx={{ width: "100%", background: "#07080D", position: "relative" }}
+        >
           <Grid
             sx={{
+              display: { xs: "flex", md: "none" },
               position: "absolute",
-              top: "17%",
+              top: "19%",
+              left: "35%",
+              width: "202px",
+              height: "315px",
+              transform: "rotate(150deg)",
+              flexShrink: 0,
+              borderRadius: "365px",
+              background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+              filter: "blur(150px)",
+            }}
+          />
+          <Grid
+            sx={{
+              display: { xs: "none", md: "flex" },
+              position: "absolute",
+              top: "19%",
               right: "10%",
               width: "202px",
               height: "315px",
@@ -52,18 +70,45 @@ const BecomeInvestor = () => {
               alignItems="center"
             >
               <Grid item position="relative">
-                <div style={{ position: "absolute", top: "9px", left: "58px" }}>
-                  <StarIco width={28} height={28} />
-                </div>
-                <div
-                  style={{
+                <Grid
+                  sx={{
                     position: "absolute",
-                    right: "65px",
-                    bottom: "-7px",
+                    top: "9px",
+                    left: "58px",
+                    display: { xs: "none", md: "flex" },
                   }}
                 >
                   <StarIco width={28} height={28} />
-                </div>
+                </Grid>
+                <Grid
+                  sx={{
+                    position: "absolute",
+                    right: "65px",
+                    bottom: "-7px",
+                    display: { xs: "none", md: "flex" },
+                  }}
+                >
+                  <StarIco width={28} height={28} />
+                </Grid>
+                <Grid
+                  sx={{
+                    position: "absolute",
+                    left: "118px",
+                    display: { xs: "flex", md: "none" },
+                  }}
+                >
+                  <StarIco width={18} height={18} />
+                </Grid>
+                <Grid
+                  sx={{
+                    position: "absolute",
+                    right: "90px",
+                    bottom: "-25px",
+                    display: { xs: "flex", md: "none" },
+                  }}
+                >
+                  <StarIco width={18} height={18} />
+                </Grid>
                 <Typography
                   color="#46E4FF"
                   fontWeight={400}
@@ -95,15 +140,16 @@ const BecomeInvestor = () => {
                 </Typography>
               </Grid>
 
-              <Grid item mt={6} mb={4}>
+              <Grid item mt={6} mb={1}>
                 <Grid
                   container
                   direction="row"
                   justifyContent="center"
                   alignItems="stretch"
+                  zIndex={99}
                 >
                   {stepsData.map((item, index) => (
-                    <Grid item px={3}>
+                    <Grid item px={3} sx={{ zIndex: 0 }}>
                       <Grid
                         container
                         direction="column"
@@ -111,11 +157,15 @@ const BecomeInvestor = () => {
                         alignItems="center"
                         border="1px solid #ffffff"
                         borderRadius={3}
-                        background="#000000"
                         width="310px"
                         pt={3}
                         px={4}
                         pb={5}
+                        mb={3}
+                        sx={{
+                          background: "#000000",
+                          zIndex: 99,
+                        }}
                       >
                         <img src={item.icon} width={65} height={65} />
                         <Typography
@@ -145,7 +195,7 @@ const BecomeInvestor = () => {
                 </Grid>
               </Grid>
 
-             { /*<Grid item>
+              {/*<Grid item>
                 <Button btnText="start now" />
               </Grid> */}
             </Grid>

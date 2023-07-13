@@ -4,6 +4,7 @@ import bulletIco from "../../assets/images/bullet-point-white.png";
 // import Button from "../button/Button";
 import { ArrowRightAlt } from "@mui/icons-material";
 import searchPageImg from "../../assets/images/Search-Page.webp";
+import searchPageMobImg from "../../assets/images/search-page-mob.png";
 import whitePapers from "../../assets/files/whitepapers.pdf";
 
 const GetAccess = () => {
@@ -40,6 +41,24 @@ const GetAccess = () => {
               filter: "blur(125px)",
             }}
           />
+
+          <Grid
+            display={{ xs: "flex", md: "none" }}
+            style={{
+              zIndex: 0,
+              position: "absolute",
+              top: "77%",
+              left: "60%",
+              width: "118px",
+              height: "200px",
+              transform: "rotate(150deg)",
+              flexShrink: 0,
+              borderRadius: "365px",
+              background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+              filter: "blur(100px)",
+            }}
+          />
+
           <Grid style={{ zIndex: 99 }}>
             <Grid
               container
@@ -165,10 +184,11 @@ const GetAccess = () => {
               </Grid>
               <Grid item xs={12} mt={8} display={{ xs: "flex", md: "none" }}>
                 <img
-                  src={searchPageImg}
+                  src={searchPageMobImg}
                   alt="search-page"
                   width="100%"
                   height="70%"
+                  style={{ zIndex: 99 }}
                 />
               </Grid>
               <Grid
