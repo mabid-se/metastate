@@ -1,6 +1,8 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import roadmapBg from "../../assets/images/roadmap-bg.png";
+import roadmapBgMob from "../../assets/images/roadmap-bg-mob.png";
+import roadmapBullet from "../../assets/images/roadmap-bullet.png";
 import "../../App.css";
 
 const Roadmap = () => {
@@ -138,7 +140,6 @@ const Roadmap = () => {
     window.addEventListener(
       "wheel",
       (event) => {
-
         const st = document.documentElement.scrollTop;
         console.log("ST " + st);
         console.log("OT " + ref1.current.offsetTop);
@@ -151,11 +152,12 @@ const Roadmap = () => {
           ref1.current.offsetTop < st + ref1.current.offsetHeight * 0.9
         ) {
           if (direction_1 > 0) {
-            if(!backgroundSize<=0)
-            document.getElementById("roadMap").scrollIntoView({
-              block:    "nearest",
-              inline:   "nearest",
-            });            setbackgroundSize((backgroundSize += 3));
+            if (!backgroundSize <= 0)
+              document.getElementById("roadMap").scrollIntoView({
+                block: "nearest",
+                inline: "nearest",
+              });
+            setbackgroundSize((backgroundSize += 3));
             setStyle({
               background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
               backgroundSize: `${backgroundSize}px 55px`,
@@ -220,6 +222,7 @@ const Roadmap = () => {
         >
           <Grid
             sx={{
+              display: { xs: "none", md: "flex" },
               zIndex: 0,
               position: "absolute",
               top: { lg: "33%", xl: "43%" },
@@ -240,11 +243,12 @@ const Roadmap = () => {
               justifyContent="space-between"
               alignItems="flex-start"
               mt={4}
+              px={{ xs: 1, md: 0 }}
             >
               <Grid item lg={6}>
                 <Typography
                   color="#ffffff"
-                  fontSize="46px"
+                  fontSize={{ xs: "32px", md: "46px" }}
                   fontWeight={600}
                   fontFamily="Montserrat"
                   lineHeight="100%"
@@ -258,17 +262,29 @@ const Roadmap = () => {
                   fontWeight={400}
                   fontFamily="Montserrat"
                   lineHeight="100%"
+                  display={{ xs: "none", md: "block" }}
                 >
                   Metastate will be build in 5 Phases. Download
                   <br />
                   the whitepaper for more information
+                </Typography>
+                <Typography
+                  my={4}
+                  color="#ffffff"
+                  display={{ xs: "flex", md: "none" }}
+                  fontSize="15px"
+                  fontWeight={400}
+                  fontFamily="Montserrat"
+                >
+                  Metastate will be build in 5 Phases. Download the whitepaper
+                  for more information
                 </Typography>
               </Grid>
               <Grid item lg={3}>
                 <Grid
                   container
                   direction="row"
-                  justifyContent="flex-end"
+                  justifyContent={{ md: "flex-end" }}
                   alignItems="center"
                   spacing={0}
                   className="roadMap"
@@ -276,8 +292,8 @@ const Roadmap = () => {
                 >
                   <Grid
                     item
-                    width="85px"
-                    height="55px"
+                    width={{ xs: "75px", md: "85px" }}
+                    height={{ xs: "50px", md: "55px" }}
                     borderRight="1px solid #ffffff"
                   >
                     <Typography
@@ -294,8 +310,8 @@ const Roadmap = () => {
                   </Grid>
                   <Grid
                     item
-                    width="85px"
-                    height="55px"
+                    width={{ xs: "75px", md: "85px" }}
+                    height={{ xs: "50px", md: "55px" }}
                     borderRight="1px solid #ffffff"
                   >
                     <Typography
@@ -312,8 +328,8 @@ const Roadmap = () => {
                   </Grid>
                   <Grid
                     item
-                    width="85px"
-                    height="55px"
+                    width={{ xs: "75px", md: "85px" }}
+                    height={{ xs: "50px", md: "55px" }}
                     borderRight="1px solid #ffffff"
                   >
                     <Typography
@@ -333,18 +349,23 @@ const Roadmap = () => {
             </Grid>
             <Box
               sx={{
-                mt: 6,
-                pb: 16,
-                backgroundImage: `url(${roadmapBg})`,
+                mt: { xs: 4, md: 6 },
+                px: { xs: 1, md: 0 },
+                pb: { xs: 8, md: 16 },
+                backgroundImage: {
+                  xs: `url(${roadmapBgMob})`,
+                  md: `url(${roadmapBg})`,
+                },
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "100% 100%",
-                backgroundPosition: "center bottom",
+                backgroundSize: { xs: "80% 160%", md: "100% 100%" },
+                backgroundPosition: { xs: "right bottom", md: "center bottom" },
                 height: { lg: "60vh", xl: "60vh" },
               }}
             >
               <Grid container justifyContent="flex-start">
                 <Grid item>
                   <Typography
+                    display={{ xs: "none", md: "block" }}
                     color="#ffffff"
                     fontSize="28px"
                     fontWeight={600}
@@ -355,8 +376,26 @@ const Roadmap = () => {
                     <br />
                     Development
                   </Typography>
+                  <Typography
+                    display={{ xs: "block", md: "none" }}
+                    color="#ffffff"
+                    fontSize="25px"
+                    fontWeight={500}
+                    fontFamily="Montserrat"
+                    // lineHeight="100%"
+                  >
+                    Conceptualization
+                    <br />
+                    and Development
+                  </Typography>
                 </Grid>
-                <Grid item position="relative" width="100%" height="100%">
+                <Grid
+                  item
+                  position="relative"
+                  width="100%"
+                  height="100%"
+                  display={{ xs: "none", md: "flex" }}
+                >
                   {/* ---| First grid |--- */}
                   {stepsData.map((item, index) => (
                     <Grid
@@ -533,6 +572,68 @@ const Roadmap = () => {
                 </Grid>
               </Grid>
             </Box>
+            <Grid
+              container
+              direction="column"
+              justifyContent="center"
+              display={{ xs: "flex", md: "none" }}
+              px={1}
+            >
+              {stepsData.map((item, index) => (
+                <Grid
+                  key={index}
+                  item
+                  sx={{
+                    position: "relative",
+                    height: "145px",
+                    borderLeft: "2px solid #f2f2f2",
+                    borderImage: `linear-gradient(180deg, #0092FF 24%,  #42E3FF 60%, #fff 100%) 1`,
+                    pl: 2,
+                    mb: 2,
+                    py: 2,
+                  }}
+                >
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: "-9px",
+                      bottom: "-22px",
+                      width: "22px",
+                      height: "22px",
+                      backgroundImage: `url(${roadmapBullet})`,
+                      backgroundRepeat: "no-repeat",
+                    }}
+                  />
+                  <Grid
+                    container
+                    direction="column"
+                    justifyContent="center"
+                    spacing={1}
+                  >
+                    <Grid item>
+                      <Typography
+                        color="#ffffff"
+                        fontSize="19px"
+                        fontWeight={600}
+                        fontFamily="Montserrat"
+                      >
+                        {item.heading}
+                      </Typography>
+                    </Grid>
+                    <Grid item>
+                      <Typography
+                        color="#c9c9c9"
+                        fontSize="10px"
+                        fontWeight={400}
+                        fontFamily="Montserrat"
+                      >
+                        {item.description}
+                      </Typography>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              ))}
+            </Grid>
           </Container>
         </Box>
       </>

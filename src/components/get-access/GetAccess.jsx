@@ -125,7 +125,7 @@ const GetAccess = () => {
                       alignItems={{ xs: "center", md: "center" }}
                       spacing={{ xs: 3, md: 2 }}
                     >
-                      <Grid item width="100%">
+                      <Grid item width={{ xs: "100%", md: "auto" }}>
                         <a
                           style={{ textDecoration: "none" }}
                           href="https://discord.gg/9nUEkWbZ5h"
@@ -152,7 +152,7 @@ const GetAccess = () => {
                           </Button>
                         </a>
                       </Grid>
-                      <Grid item width="100%">
+                      <Grid item width={{ xs: "100%", md: "auto" }}>
                         <a
                           style={{ textDecoration: "none" }}
                           href={whitePapers}
