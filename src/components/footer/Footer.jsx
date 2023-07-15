@@ -1,6 +1,7 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import ellipseImg from "../../assets/images/staric-ellipse.webp";
+import ellipseImgMob from "../../assets/images/staric-ellipse-mob.webp";
 import { ReactComponent as MetastateLogo } from "../../assets/images/metastate-logo.svg";
 import { ReactComponent as FacebookIco } from "../../assets/images/facebook.svg";
 import { ReactComponent as InstagramIcon } from "../../assets/images/instagram-svg.svg";
@@ -44,25 +45,26 @@ const Footer = (props) => {
             sx={{
               borderRadius: "20px",
               background: `linear-gradient(90deg, #0092ff 0%, #6aefff 86.77%, #42e3ff 100%)`,
+              overflow: "hidden",
             }}
-            px={4}
+            px={{ md: 4 }}
             my={4}
           >
             <Grid
               item
               md={9}
               py={6}
-              px={{ md: 2 }}
+              px={{ xs: 4, md: 2 }}
               sx={{
-                backgroundImage: `url(${ellipseImg})`,
-                backgroundSize: { xs: "80% 80%", md: "0 0" },
+                backgroundImage: `url(${ellipseImgMob})`,
+                backgroundSize: { xs: "50% 60%", md: "0 0" },
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "right bottom",
               }}
             >
               <Typography
                 color="#ffffff"
-                fontSize="24px"
+                fontSize="28px"
                 fontWeight={600}
                 fontFamily="Montserrat"
                 mb={3}
@@ -101,7 +103,7 @@ const Footer = (props) => {
                   start now
                 </Button>
               </Grid>
-              <Grid display={{ xs: "block", md: "none" }} textAlign="center">
+              {/* <Grid display={{ xs: "block", md: "none" }} textAlign="center">
                 <Button
                   sx={{
                     py: 1,
@@ -118,8 +120,7 @@ const Footer = (props) => {
                 >
                   start now
                 </Button>
-              </Grid>
-              {/* <Button variant="" btnText="start now" /> */}
+              </Grid> */}
             </Grid>
             <Grid
               item

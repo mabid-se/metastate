@@ -123,7 +123,7 @@ const GetAccess = () => {
                       direction={{ xs: "column", md: "row" }}
                       justifyContent={{ xs: "center", md: "flex-start" }}
                       alignItems={{ xs: "center", md: "center" }}
-                      spacing={{ xs: 3, md: 2 }}
+                      spacing={{ xs: 2, md: 2 }}
                     >
                       <Grid item width={{ xs: "100%", md: "auto" }}>
                         <a

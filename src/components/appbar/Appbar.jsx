@@ -82,8 +82,8 @@ const Appbar = (props) => {
                     justifyContent="center"
                     alignItems="stretch"
                     spacing={1}
-                    borderBottom="1px solid #ffffff66"
-                    pb={2}
+                    // borderBottom="1px solid #ffffff66"
+                    // pb={2}
                   >
                     {menuItems.map((item, index) => (
                       <Grid item key={index}>
@@ -121,7 +121,7 @@ const Appbar = (props) => {
                       </Grid>
                     ))}
                   </Grid>
-                  <Grid
+                  {/* <Grid
                     container
                     direction="row"
                     justifyContent="flex-start"
@@ -164,18 +164,27 @@ const Appbar = (props) => {
                         connect wallet
                       </Button>
                     </Grid>
-                  </Grid>
+                  </Grid> */}
                 </Container>
               </Box>
             </Modal>
           </Grid>
 
-          <Grid item xs={7} px={1}>
+          <Grid
+            item
+            xs={10} // change it to 7 when login button is shown
+            px={1}
+            textAlign="left"
+          >
             <a href="#">
-              <img src={metastateLogo} width="80%" height="auto" />
+              <img
+                src={metastateLogo}
+                width="55%" // change it to 80 when login button is shown
+                height="auto"
+              />
             </a>
           </Grid>
-          <Grid item xs={3} textAlign="right">
+          {/* <Grid item xs={3} textAlign="right">
             <Button
               sx={{
                 py: 1,
@@ -190,7 +199,7 @@ const Appbar = (props) => {
             >
               login
             </Button>
-          </Grid>
+          </Grid> */}
         </Grid>
 
         <Grid

@@ -284,16 +284,17 @@ const Roadmap = () => {
                 <Grid
                   container
                   direction="row"
-                  justifyContent={{ md: "flex-end" }}
+                  justifyContent="flex-end"
                   alignItems="center"
                   spacing={0}
                   className="roadMap"
                   sx={style}
+                  display={{ xs: "none", md: "flex" }}
                 >
                   <Grid
                     item
-                    width={{ xs: "75px", md: "85px" }}
-                    height={{ xs: "50px", md: "55px" }}
+                    width="85px"
+                    height="55px"
                     borderRight="1px solid #ffffff"
                   >
                     <Typography
@@ -310,8 +311,8 @@ const Roadmap = () => {
                   </Grid>
                   <Grid
                     item
-                    width={{ xs: "75px", md: "85px" }}
-                    height={{ xs: "50px", md: "55px" }}
+                    width="85px"
+                    height="55px"
                     borderRight="1px solid #ffffff"
                   >
                     <Typography
@@ -328,9 +329,84 @@ const Roadmap = () => {
                   </Grid>
                   <Grid
                     item
-                    width={{ xs: "75px", md: "85px" }}
-                    height={{ xs: "50px", md: "55px" }}
+                    width="85px"
+                    height="55px"
                     borderRight="1px solid #ffffff"
+                  >
+                    <Typography
+                      mt={2}
+                      color="#ffffff"
+                      textAlign="center"
+                      fontSize="20px"
+                      fontWeight={400}
+                      fontFamily="Montserrat"
+                      lineHeight="100%"
+                    >
+                      Three
+                    </Typography>
+                  </Grid>
+                </Grid>
+
+                <Grid
+                  container
+                  direction="row"
+                  alignItems="center"
+                  display={{ xs: "flex", md: "none" }}
+                  sx={{
+                    background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
+                    backgroundSize:
+                      stepsData === stepsData1
+                        ? "75px 50px"
+                        : stepsData === stepsData2
+                        ? "150px 50px"
+                        : "225px 50px",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
+                  <Grid
+                    item
+                    width="75px"
+                    height="50px"
+                    borderRight="1px solid #ffffff"
+                    onClick={() => setRoadMapData(stepsData1)}
+                  >
+                    <Typography
+                      mt={2}
+                      color="#ffffff"
+                      textAlign="center"
+                      fontSize="20px"
+                      fontWeight={400}
+                      fontFamily="Montserrat"
+                      lineHeight="100%"
+                    >
+                      One
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    item
+                    width="75px"
+                    height="50px"
+                    borderRight="1px solid #ffffff"
+                    onClick={() => setRoadMapData(stepsData2)}
+                  >
+                    <Typography
+                      mt={2}
+                      color="#ffffff"
+                      textAlign="center"
+                      fontSize="20px"
+                      fontWeight={400}
+                      fontFamily="Montserrat"
+                      lineHeight="100%"
+                    >
+                      Two
+                    </Typography>
+                  </Grid>
+                  <Grid
+                    item
+                    width="75px"
+                    height="50px"
+                    borderRight="1px solid #ffffff"
+                    onClick={() => setRoadMapData(stepsData3)}
                   >
                     <Typography
                       mt={2}
@@ -357,7 +433,7 @@ const Roadmap = () => {
                   md: `url(${roadmapBg})`,
                 },
                 backgroundRepeat: "no-repeat",
-                backgroundSize: { xs: "80% 160%", md: "100% 100%" },
+                backgroundSize: { xs: "80% 125%", md: "100% 100%" },
                 backgroundPosition: { xs: "right bottom", md: "center bottom" },
                 height: { lg: "60vh", xl: "60vh" },
               }}
@@ -379,10 +455,9 @@ const Roadmap = () => {
                   <Typography
                     display={{ xs: "block", md: "none" }}
                     color="#ffffff"
-                    fontSize="25px"
+                    fontSize="28px"
                     fontWeight={500}
                     fontFamily="Montserrat"
-                    // lineHeight="100%"
                   >
                     Conceptualization
                     <br />

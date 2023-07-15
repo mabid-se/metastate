@@ -36,7 +36,7 @@ const BecomeInvestor = () => {
             sx={{
               display: { xs: "flex", md: "none" },
               position: "absolute",
-              top: "19%",
+              top: "27%",
               left: "35%",
               width: "202px",
               height: "315px",
@@ -93,21 +93,22 @@ const BecomeInvestor = () => {
                 <Grid
                   sx={{
                     position: "absolute",
-                    left: "118px",
+                    top: "-5px",
+                    left: "95px",
                     display: { xs: "flex", md: "none" },
                   }}
                 >
-                  <StarIco width={18} height={18} />
+                  <StarIco width={20} height={20} />
                 </Grid>
                 <Grid
                   sx={{
                     position: "absolute",
-                    right: "90px",
-                    bottom: "0 px",
+                    right: "80px",
+                    bottom: "3px",
                     display: { xs: "flex", md: "none" },
                   }}
                 >
-                  <StarIco width={18} height={18} />
+                  <StarIco width={20} height={20} />
                 </Grid>
                 <Typography
                   color="#46E4FF"
@@ -131,8 +132,8 @@ const BecomeInvestor = () => {
                 <Typography
                   mt={1}
                   color="#ffffff"
-                  fontSize={{xs:18,md:14}}
-                  fontWeight={{xs:500,md:600}}
+                  fontSize={{ xs: 18, md: 14 }}
+                  fontWeight={{ xs: 500, md: 600 }}
                   fontFamily="Montserrat"
                   textAlign="center"
                 >
@@ -157,7 +158,7 @@ const BecomeInvestor = () => {
                         alignItems="center"
                         border="1px solid #ffffff"
                         borderRadius={3}
-                        width="310px"
+                        width="340px"
                         pt={3}
                         px={4}
                         pb={5}
