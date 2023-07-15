@@ -4,8 +4,9 @@ import ellipseImg from "../../assets/images/staric-ellipse.webp";
 import ellipseImgMob from "../../assets/images/staric-ellipse-mob.webp";
 import { ReactComponent as MetastateLogo } from "../../assets/images/metastate-logo.svg";
 import { ReactComponent as FacebookIco } from "../../assets/images/facebook.svg";
-import { ReactComponent as InstagramIcon } from "../../assets/images/instagram-svg.svg";
+import { ReactComponent as WhatsappIcon } from "../../assets/images/whatsapp.svg";
 import { ReactComponent as TwitterIco } from "../../assets/images/twitter.svg";
+import { ReactComponent as InstagramIcon } from "../../assets/images/instagram.svg";
 import { ReactComponent as YoutubeIco } from "../../assets/images/youtube.svg";
 
 const Footer = (props) => {
@@ -20,17 +21,31 @@ const Footer = (props) => {
   ];
 
   const socialItems = [
-    { name: "facebook", icon: <FacebookIco />, link: "/" },
     {
-      name: "whatsapp",
-      icon: <InstagramIcon />,
-      link: "https://instagram.com/metastateproperties?igshid=MmIzYWVlNDQ5Yg==",
+      name: "facebook",
+      icon: <FacebookIco width={23} height={23} />,
+      link: "/",
     },
+    // {
+    //   name: "whatsapp",
+    //   icon: <WhatsappIcon width={23} height={23} />,
+    //   link: "",
+    // },
     {
       name: "twitter",
-      icon: <TwitterIco />,
+      icon: <TwitterIco width={23} height={23} />,
       link: "https://twitter.com/_metastate?s=21&t=NxDMJg1HWKCuTG_JgvzD4g",
     },
+    {
+      name: "instagram",
+      icon: <InstagramIcon width={23} height={23} />,
+      link: "https://instagram.com/metastateproperties?igshid=MmIzYWVlNDQ5Yg==",
+    },
+    // {
+    //   name: "youtube",
+    //   icon: <YoutubeIco width={23} height={23} />,
+    //   link: "",
+    // },
   ];
 
   return (
@@ -85,7 +100,7 @@ const Footer = (props) => {
                 <br />
                 in Portugal
               </Typography>
-              <Grid display={{ xs: "none", md: "flex" }}>
+              {/* <Grid display={{ xs: "none", md: "flex" }}>
                 <Button
                   sx={{
                     py: 1,
@@ -102,7 +117,7 @@ const Footer = (props) => {
                 >
                   start now
                 </Button>
-              </Grid>
+              </Grid> */}
               {/* <Grid display={{ xs: "block", md: "none" }} textAlign="center">
                 <Button
                   sx={{

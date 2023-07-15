@@ -48,7 +48,7 @@ const HeroSection = () => {
               Real Estate
             </Typography>
           </Grid>
-          <Grid item mt={{ xs: 2, lg: 5 }}>
+          <Grid item mt={{ xs: 2, lg: 3 }}>
             <Typography
               color="#ffffff"
               fontFamily="Montserrat"
@@ -65,12 +65,15 @@ const HeroSection = () => {
             <Typography
               color="#ffffff"
               fontFamily="Montserrat"
-              fontSize={23}
+              fontSize={25}
               fontWeight={600}
               display={{ xs: "none", md: "flex" }}
             >
-              Metastate is lowering the entry barrier to the real estate market
-              and making it accesible for everyone.
+              Metastate is lowering the entry barrier to the
+              <br />
+              real estate market and making it accesible for
+              <br />
+              everyone.
             </Typography>
           </Grid>
         </Grid>
