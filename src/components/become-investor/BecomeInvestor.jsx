@@ -37,7 +37,7 @@ const BecomeInvestor = () => {
               display: { xs: "flex", md: "none" },
               position: "absolute",
               top: "27%",
-              left: "35%",
+              left: { xs: "15%", sm: "35%" },
               width: "202px",
               height: "315px",
               transform: "rotate(150deg)",
@@ -93,8 +93,8 @@ const BecomeInvestor = () => {
                 <Grid
                   sx={{
                     position: "absolute",
-                    top: "-5px",
-                    left: "95px",
+                    top: { sm: "-5px" },
+                    left: { xs: "55px", sm: "95px" },
                     display: { xs: "flex", md: "none" },
                   }}
                 >
@@ -103,8 +103,8 @@ const BecomeInvestor = () => {
                 <Grid
                   sx={{
                     position: "absolute",
-                    right: "80px",
-                    bottom: "3px",
+                    right: { xs: "60px", sm: "80px" },
+                    bottom: { xs: "-25px", sm: "3px" },
                     display: { xs: "flex", md: "none" },
                   }}
                 >
@@ -158,7 +158,7 @@ const BecomeInvestor = () => {
                         alignItems="center"
                         border="1px solid #ffffff"
                         borderRadius={3}
-                        width="340px"
+                        width={{ sm: "340px" }}
                         pt={3}
                         px={4}
                         pb={5}

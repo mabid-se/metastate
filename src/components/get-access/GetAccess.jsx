@@ -44,11 +44,11 @@ const GetAccess = () => {
 
           <Grid
             display={{ xs: "flex", md: "none" }}
-            style={{
+            sx={{
               zIndex: 0,
               position: "absolute",
               top: "77%",
-              left: "60%",
+              left: { xs: "50%", sm: "60%" },
               width: "118px",
               height: "200px",
               transform: "rotate(150deg)",
