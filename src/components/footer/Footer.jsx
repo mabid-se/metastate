@@ -86,7 +86,7 @@ const Footer = (props) => {
                 textAlign="center"
                 display={{ xs: "flex", md: "none" }}
               >
-                Browse amaizing properties in Portugal
+                Browse amazing properties in Portugal
               </Typography>
               <Typography
                 color="#ffffff"
@@ -96,7 +96,7 @@ const Footer = (props) => {
                 mb={1}
                 display={{ xs: "none", md: "flex" }}
               >
-                Browse amaizing properties
+                Browse amazing properties
                 <br />
                 in Portugal
               </Typography>

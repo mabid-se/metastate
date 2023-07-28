@@ -62,7 +62,7 @@ const BecomeInvestor = () => {
               filter: "blur(150px)",
             }}
           />
-          <Grid py={6}>
+          <Grid py={{xs:6, md:20}}>
             <Grid
               container
               direction="column"

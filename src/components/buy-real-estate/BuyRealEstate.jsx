@@ -212,7 +212,7 @@ const BuyRealEstate = () => {
                       fontSize="16px"
                       fontWeight={500}
                       fontFamily="Montserrat"
-                      textAlign={{ xs: "justify", md: "left" }}
+                      textAlign={{ xs: "left", md: "left" }}
                     >
                       Metastate is a groundbreaking platform that revolutionizes
                       the way we invest in and interact with real estate.
@@ -231,7 +231,7 @@ const BuyRealEstate = () => {
                       fontSize="17px"
                       fontWeight={500}
                       fontFamily="Montserrat"
-                      textAlign={{ xs: "justify", md: "left" }}
+                      textAlign={{ xs: "left", md: "left" }}
                     >
                       Through Metastate, we bridge the traditional real estate
                       market with the innovative world of digital assets. By

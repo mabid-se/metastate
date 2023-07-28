@@ -113,102 +113,13 @@ const Roadmap = () => {
   ];
 
   const [stepsData, setRoadMapData] = useState(stepsData3);
-  const [style, setStyle] = useState();
-  let [backgroundSize, setbackgroundSize] = useState(0);
+  let [Background1, setbackground1] = useState(1);
+  let [Background2, setbackground2] = useState(0);
+  let [Background3, setbackground3] = useState(0);
 
-  function useIsInViewport(ref) {
-    const [isIntersecting, setIsIntersecting] = useState(false);
-    const observer = useMemo(
-      () =>
-        new IntersectionObserver(
-          ([entry]) => setIsIntersecting(entry.isIntersecting),
-          { threshold: 0.5 }
-        ),
-      []
-    );
-    useEffect(() => {
-      observer.observe(ref.current);
-      return () => {
-        observer.disconnect();
-      };
-    }, [ref, observer, isIntersecting]);
-    return isIntersecting;
-  }
+ 
 
-  let ss = useIsInViewport(ref1);
-  useEffect(() => {
-    window.addEventListener(
-      "wheel",
-      (event) => {
-        const st = document.documentElement.scrollTop;
-        console.log("ST " + st);
-        console.log("OT " + ref1.current.offsetTop);
-        const direction_1 = event.deltaY;
-        if (!ss) {
-          document.body.style.overflow = "auto";
-        }
-        if (
-          ref1.current.offsetTop >= st + 10 &&
-          ref1.current.offsetTop < st + ref1.current.offsetHeight * 0.9
-        ) {
-          if (direction_1 > 0) {
-            if (!backgroundSize <= 0)
-              document.getElementById("roadMap").scrollIntoView({
-                block: "nearest",
-                inline: "nearest",
-              });
-            setbackgroundSize((backgroundSize += 3));
-            setStyle({
-              background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-              backgroundSize: `${backgroundSize}px 55px`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: `left 100%`,
-            });
-            document.body.style.overflow = "hidden";
-            if (backgroundSize > 110 && backgroundSize < 200) {
-              setRoadMapData(stepsData2);
-            } else if (backgroundSize > 200) {
-              setRoadMapData(stepsData3);
-            }
-            if (backgroundSize > 300) {
-              document.body.style.overflow = "auto";
-              return;
-            }
-            return;
-          } else if (direction_1 < 0) {
-            if (backgroundSize >= 3) {
-              document.getElementById("roadMap").scrollIntoView(false);
-              setbackgroundSize((backgroundSize -= 3));
-              setStyle({
-                background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-                backgroundSize: `${backgroundSize}px 55px`,
-                backgroundRepeat: "no-repeat",
-                transition: "width 2s",
-                backgroundPosition: `left 100%`,
-              });
-              if (backgroundSize < 110 && backgroundSize < 200) {
-                setRoadMapData(stepsData1);
-              } else if (backgroundSize >= 180 && backgroundSize <= 200) {
-                setRoadMapData(stepsData2);
-              }
-              document.body.style.overflow = "hidden";
-              return;
-            }
-            document.body.style.overflow = "auto";
-            setbackgroundSize((backgroundSize = 0));
-            setStyle({
-              background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
-              backgroundSize: `${backgroundSize}px 55px`,
-              backgroundRepeat: "no-repeat",
-              transition: "width 2s",
-              backgroundPosition: `left 100%`,
-            });
-          }
-        }
-      },
-      false
-    );
-  }, []);
+
 
   return (
     <div id="roadMap" ref={ref1}>
@@ -288,7 +199,6 @@ const Roadmap = () => {
                   alignItems="center"
                   spacing={0}
                   className="roadMap"
-                  sx={style}
                   display={{ xs: "none", md: "flex" }}
                 >
                   <Grid
@@ -296,6 +206,13 @@ const Roadmap = () => {
                     width="85px"
                     height="55px"
                     borderRight="1px solid #ffffff"
+                    sx={{
+                      background: Background1 ? `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)` : '',
+                    }}
+                    onClick={() => {  
+                      setbackground3(false);
+                      setbackground2(false);
+                      setbackground1(1); setRoadMapData(stepsData1)}}
                   >
                     <Typography
                       mt={2}
@@ -314,6 +231,15 @@ const Roadmap = () => {
                     width="85px"
                     height="55px"
                     borderRight="1px solid #ffffff"
+                    sx={{
+                      background: Background2 ? `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)` : '',
+                    }}
+                    onClick={() => {
+                      setbackground3(false);
+                      setbackground2(true);
+                      setbackground1(false);
+                      setRoadMapData(stepsData2)
+                    }}
                   >
                     <Typography
                       mt={2}
@@ -332,6 +258,14 @@ const Roadmap = () => {
                     width="85px"
                     height="55px"
                     borderRight="1px solid #ffffff"
+                    sx={{
+                      background: Background3 ? `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)` : '',
+                    }}
+                    onClick={() => {
+                      setbackground1(false);
+                      setbackground2(false);
+                      setbackground3(true); setRoadMapData(stepsData3)
+                    }}
                   >
                     <Typography
                       mt={2}
@@ -353,7 +287,6 @@ const Roadmap = () => {
                   alignItems="center"
                   display={{ xs: "flex", md: "none" }}
                   sx={{
-                    background: `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)`,
                     backgroundSize:
                       stepsData === stepsData1
                         ? "75px 50px"
@@ -366,9 +299,15 @@ const Roadmap = () => {
                   <Grid
                     item
                     width="75px"
+                    sx={{
+                      background: Background1 ? `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)` : '',
+                    }}
                     height="50px"
                     borderRight="1px solid #ffffff"
-                    onClick={() => setRoadMapData(stepsData1)}
+                    onClick={() => {  
+                      setbackground3(false);
+                      setbackground2(false);
+                      setbackground1(1); setRoadMapData(stepsData1)}}
                   >
                     <Typography
                       mt={2}
@@ -384,10 +323,18 @@ const Roadmap = () => {
                   </Grid>
                   <Grid
                     item
+                    sx={{
+                      background: Background2 ? `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)` : '',
+                    }}
                     width="75px"
                     height="50px"
                     borderRight="1px solid #ffffff"
-                    onClick={() => setRoadMapData(stepsData2)}
+                    onClick={() => {
+                      setbackground3(false);
+                      setbackground2(true);
+                      setbackground1(false);
+                      setRoadMapData(stepsData2)
+                    }}
                   >
                     <Typography
                       mt={2}
@@ -404,9 +351,17 @@ const Roadmap = () => {
                   <Grid
                     item
                     width="75px"
+                      sx={{
+                        background: Background3 ? `linear-gradient(90deg, #0092FF 0%, #6AEFFF 86.77%, #42E3FF 100%)` : '',
+                      }}
                     height="50px"
                     borderRight="1px solid #ffffff"
-                    onClick={() => setRoadMapData(stepsData3)}
+                    onClick={() => {
+                      setbackground1(false);
+                      setbackground2(false);
+                      setbackground3(true); setRoadMapData(stepsData3)
+                    }
+                    }
                   >
                     <Typography
                       mt={2}
@@ -502,7 +457,7 @@ const Roadmap = () => {
                       <Typography
                         mt={2}
                         pl={1}
-                        color="#ffffff"
+                        color="#C9C9C9"
                         fontSize={13}
                         fontWeight={400}
                         fontFamily="Montserrat"
@@ -698,7 +653,7 @@ const Roadmap = () => {
                     <Grid item>
                       <Typography
                         color="#c9c9c9"
-                        fontSize="10px"
+                        fontSize="11px"
                         fontWeight={400}
                         fontFamily="Montserrat"
                       >
