@@ -12,7 +12,7 @@ const Roadmap = () => {
     {
       heading: "Q1 2023",
       description:
-        "Project inception - The idea for Metastate is conceived and the core team is formed. Extensive research and analysis are counducted to shape the platforms vision and goals",
+        "Project Inception - The idea for Metastate is conceived, and the core team is formed. Extensive research and analysis are conducted to shape the platform’s vision and goals.",
       top: { lg: 80, xl: 217 },
       left: 70,
       height: { lg: "210px", xl: "240px" },
@@ -20,7 +20,7 @@ const Roadmap = () => {
     {
       heading: "Q2 2023",
       description:
-        "Whitepaper and Tokenomics - The whitepaper is finalized, outlining the platform's architecture, functionalities, and tokenomics. The team conducts internal reviews and seeks feedback from industry experts.",
+        "Whitepaper and Tokenomics - The whitepaper is finalized, outlining the platform’s architecture, functionalities, and tokenomics. The team conducts internal reviews and seeks feedback from industry experts.",
       top: { lg: 23, xl: 135 },
       left: 354,
       height: { lg: "210px", xl: "240px" },
@@ -42,39 +42,42 @@ const Roadmap = () => {
       height: { lg: "210px", xl: "240px" },
     },
   ];
+
+
   const stepsData2 = [
     {
-      heading: "Q1 2023",
+      heading: "Q4 2023",
       description:
-        "Blockchain Integration - Metastate selects the Cardano blockchain as the underlying infrastructure due to its scalability, security, and sustainability features. Integration with the Cardano network begins, leveraging its advanced smart contract capabilities",
+        "Genesis NFT Release - The Metastate Collection - Genesis NFTs are introduced, offering users the opportunity to boost their profitability and engage in the world of digital collectibles. The NFT release follows a carefully planned roadmap, including pre-sale and public sale phases.",
       top: { lg: 80, xl: 217 },
       left: 70,
       height: { lg: "210px", xl: "240px" },
     },
     {
+      heading: "Q1 2023",
+      description:
+        "Blockchain Integration - Metastate selects the Cardano blockchain as the underlying infrastructure due to its scalability, security, and sustainability features. Integration with the Cardano network begins, leveraging its advanced smart contract capabilities.",
+        top: { lg: 23, xl: 135 },
+        left: 354,
+        height: { lg: "210px", xl: "240px" },
+    },
+    {
       heading: "Q2 2023",
       description:
-        "MVP Development - The Minimum Viable Product (MVP) development commences, focusing on core functionalities such as property tokenization, ownership transfers, and staking mechanisms. User interface design and user experience optimization are prioritized during this phase",
-      top: { lg: 23, xl: 135 },
-      left: 354,
-      height: { lg: "210px", xl: "240px" },
+        "MVP Development - The Minimum Viable Product (MVP) development commences, focusing on core functionalities such as property tokenization, ownership transfers, and staking mechanisms. User interface design and user experience optimization are prioritized during this phase.",
+        top: { lg: "-30px", xl: 55 },
+        left: 628,
+        height: { lg: "210px", xl: "240px" },
     },
     {
       heading: "Q3 2023",
       description:
         "MVP Testing and Feedback - The MVP undergoes rigorous testing and auditing to ensure security, performance, and functionality. External beta testing is conducted to gather user feedback and refine the platform based on user insights.",
-      top: { lg: "-30px", xl: 55 },
-      left: 628,
-      height: { lg: "210px", xl: "240px" },
+        top: { lg: "-90px", xl: "-35px" },
+        left: 903,
+        height: { lg: "210px", xl: "240px" },
     },
-    {
-      heading: "Q4 2023",
-      description:
-        "Blockchain Integration - Metastate selects the Cardano blockchain as the underlying infrastructure due to its scalability, security, and sustainability features. Integration with the Cardano network begins, leveraging its advanced smart contract capabilities",
-      top: { lg: "-90px", xl: "-35px" },
-      left: 903,
-      height: { lg: "210px", xl: "240px" },
-    },
+
   ];
   const stepsData3 = [
     {
@@ -94,25 +97,17 @@ const Roadmap = () => {
       height: { lg: "210px", xl: "240px" },
     },
     {
-      heading: "Q3 2024",
+      heading: "Q4 2024 and Beyond",
       description:
         "Expansion and Integration - Metastate aims to expand its ecosystem by integrating with external payment systems, real estate platforms, and other blockchain networks. Strategic partnerships are formed to broaden the range of investment opportunities and enhance user convenience.",
 
       top: { lg: "-30px", xl: 55 },
       left: 628,
       height: { lg: "210px", xl: "240px" },
-    },
-    {
-      heading: "Q4 2024",
-      description:
-        "Blockchain Integration - Metastate selects the Cardano blockchain as the underlying infrastructure due to its scalability, security, and sustainability features. Integration with the Cardano network begins, leveraging its advanced smart contract capabilities",
-      top: { lg: "-90px", xl: "-35px" },
-      left: 903,
-      height: { lg: "210px", xl: "240px" },
-    },
+    }
   ];
 
-  const [stepsData, setRoadMapData] = useState(stepsData3);
+  const [stepsData, setRoadMapData] = useState(stepsData1);
   let [Background1, setbackground1] = useState(1);
   let [Background2, setbackground2] = useState(0);
   let [Background3, setbackground3] = useState(0);
